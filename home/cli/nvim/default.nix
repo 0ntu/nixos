@@ -4,7 +4,6 @@
     defaultEditor = true;
     extraPackages = with pkgs; [
       alejandra
-      lua-language-server
     ];
     plugins = [
       pkgs.vimPlugins.lazy-nvim

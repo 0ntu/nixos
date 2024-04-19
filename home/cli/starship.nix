@@ -30,12 +30,12 @@
       };
 
       format = ''
-      [┌──](line_color)[\(](line_color)$username[](bold blue)$hostname[\)](line_color)$directory$git_branch
-      [└─](line_color)$character
+        [┌──](line_color)[\(](line_color)$username[](bold blue)$hostname[\)](line_color)$directory$git_branch
+        [└─](line_color)$character
       '';
 
       right_format = ''
-      $all
+        $all
 
       '';
 
