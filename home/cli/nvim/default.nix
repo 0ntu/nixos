@@ -8,12 +8,17 @@
     ];
     plugins = [
       pkgs.vimPlugins.lazy-nvim
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
   };
 
   home.file."./.config/nvim/" = {
-  	source = ./config;
-	recursive = true;
+    source = ./config;
+    recursive = true;
   };
+
+  # treesitter fix
+  xdg.configFile."nvim/parser".source = "${pkgs.symlinkJoin {
+    name = "treesitter-parsers";
+    paths = (pkgs.vimPlugins.nvim-treesitter.withAllGrammars).dependencies;
+  }}/parser";
 }

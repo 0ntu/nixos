@@ -8,6 +8,5 @@
     wezterm
     tor-browser
     cargo
-    alejandra
   ];
 }

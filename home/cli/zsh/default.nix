@@ -6,7 +6,7 @@
     enableCompletion = true;
     shellAliases = import ./aliases.nix {};
     initExtra = ''
-    	bindkey '^[[Z' autosuggest-accept
+      bindkey '^[[Z' autosuggest-accept
     '';
   };
 }

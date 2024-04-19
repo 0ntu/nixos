@@ -10,6 +10,7 @@
         audible_bell = "Disabled",
         enable_tab_bar = false,
         font = wezterm.font 'FiraCode Nerd Font Mono',
+        default_cursor_style = 'SteadyBar',
       }
     '';
   };
