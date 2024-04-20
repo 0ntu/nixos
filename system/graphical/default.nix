@@ -2,7 +2,7 @@
   imports = [
     ./fonts.nix
     ./pipewire.nix
-    ./x11.nix
+    ./hyprland.nix
   ];
 
   hardware.opengl = {
