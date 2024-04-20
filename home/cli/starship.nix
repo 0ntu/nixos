@@ -3,8 +3,8 @@
     enable = true;
     settings = {
       hostname = {
-        ssh_symbol = "󰢹";
-        format = "[$hostname]($style) [$ssh_symbol](peach)";
+        ssh_symbol = " 󰢹";
+        format = "[$hostname]($style)[$ssh_symbol](peach)";
         ssh_only = false;
         style = "bold blue";
       };
