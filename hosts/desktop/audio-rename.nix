@@ -1,21 +1,21 @@
 {pkgs, ...}: {
   services.pipewire.wireplumber.configPackages = [
     (pkgs.writeTextDir "share/wireplumber/main.lua.d/99-audio-rename.lua" ''
-      alsa_monitor.rules = {
+      monitor.alsa.rules = [
         {
-          matches = {{{ "node.name", "matches", "alsa_output.pci-0000_00_1f.3.analog-stereo" }}};
-          apply_properties = {
-            ["node.description"] = "Headphones",
-            ["node.nick"] = "Headphones",
-          },
-        },
-        {
-          matches = {{{ "device.name", "matches", "alsa_card.pci-0000_01_00.1" }}};
-          apply_properties = {
-            ["device.disabled"] = true,
-          },
-        },
-      }
+          matches = [
+            {
+              node.name = "alsa_output.pci-0000_00_1f.3.analog-stereo"
+            }
+          ]
+          actions = {
+            update-props = {
+              node.name = "Headphones"
+              node.description = "Headphones"
+            }
+          }
+        }
+      ]
     '')
   ];
 }
