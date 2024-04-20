@@ -18,25 +18,19 @@
     nvidia = ./system/nvidia.nix;
     virt = ./system/virt.nix;
     hmModule = inputs.home-manager.nixosModules.default;
-    home-manager = {
-      extraSpecialArgs = {inherit inputs;};
-      users.ontu = {
-        imports = [./home];
-      };
-    };
+    home-manager = ./home/manager.nix;
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs; machine = "desktop";};
         modules = [
           core
           hmModule
           graphical
           nvidia
           virt
+          home-manager
           ./hosts/desktop
-          {inherit home-manager;}
         ];
       };
     };

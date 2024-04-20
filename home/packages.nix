@@ -4,7 +4,6 @@
     firefox
     easyeffects
     webcord-vencord
-    discord
     wezterm
     tor-browser
     cargo
