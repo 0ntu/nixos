@@ -4,7 +4,7 @@
     settings = {
       hostname = {
         ssh_symbol = "󰢹";
-        format = "[$ssh_symbol$hostname]($style)";
+        format = "[$hostname]($style) [$ssh_symbol](peach)";
         ssh_only = false;
         style = "bold blue";
       };
