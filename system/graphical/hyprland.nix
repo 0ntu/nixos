@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = {
       default_session = {
-        command = "Hyprland";
+        command = "${pkgs.hyprland}/bin/Hyprland";
       };
     };
   };
@@ -14,6 +14,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    xdg-utils
     rofi-wayland
     swww
   ];
