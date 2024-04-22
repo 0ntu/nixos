@@ -21,14 +21,14 @@ km.set('n', '<leader>sft', require('telescope.builtin').filetypes, { desc = '[S]
 -- km.set('n', '<leader>su', function() require('telescope').extensions.undo.undo() end, { desc = '[S]earch [u]ndo tree' })
 
 -- LSP
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-    callback = function(ev)
-        -- Enable completion triggered by <c-x><c-o>
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+--     callback = function(ev)
+--         -- Enable completion triggered by <c-x><c-o>
+--         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
+--         -- Buffer local mappings.
+--         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf }
         km.set('n', 'gD', vim.lsp.buf.declaration, opts)
         km.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -44,5 +44,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, opts)
 
         km.set('n', '<Leader>d', function() vim.diagnostic.open_float() end, {desc = 'Open [d]iagnostics in a popup window'})
-    end,
-})
+--     end,
+-- })
