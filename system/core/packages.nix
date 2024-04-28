@@ -5,5 +5,6 @@
     wget
     gcc
     clang
+    gnumake
   ];
 }
