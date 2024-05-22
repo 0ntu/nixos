@@ -6,6 +6,7 @@
     enableCompletion = true;
     shellAliases = import ./aliases.nix {inherit machine;};
     initExtra = ''
+      bindkey -e
       bindkey '^[[Z' autosuggest-accept
     '';
   };

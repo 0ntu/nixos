@@ -3,9 +3,10 @@
   home.packages = with pkgs; [
     firefox
     easyeffects
-    webcord-vencord
+    discord
     wezterm
+    headsetcontrol
     tor-browser
-    cargo
+    rustup
   ];
 }
