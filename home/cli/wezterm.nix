@@ -10,7 +10,7 @@
           audible_bell = "Disabled",
           enable_tab_bar = false,
           font = wezterm.font 'Cousine',
-          font_size = 12.0,
+          font_size = 10.0,
           default_cursor_style = 'SteadyBlock',
       }
     '';

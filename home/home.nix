@@ -8,7 +8,6 @@
   imports = [
     ./cli
     ./packages.nix
-    ./rice/catppuccin
   ];
   programs.home-manager.enable = true;
 }

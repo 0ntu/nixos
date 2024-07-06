@@ -1,8 +1,9 @@
 {pkgs, ...}: {
-  services.xserver.enable = true;
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver = {
+    enable = true;
+    desktopManager.budgie.enable = true;
+    displayManager.lightdm.enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -12,5 +13,6 @@
 
   environment.systemPackages = with pkgs; [
     xclip
+    catppuccin-gtk
   ];
 }
