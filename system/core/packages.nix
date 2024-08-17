@@ -6,5 +6,6 @@
     gcc
     clang
     gnumake
+    gnupg
   ];
 }

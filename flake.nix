@@ -13,6 +13,7 @@
     nixpkgs,
     ...
   } @ inputs: let
+    system = "x86_64-linux";
     core = ./system/core;
     graphical = ./system/graphical;
     nvidia = ./system/nvidia.nix;
@@ -34,5 +35,14 @@
         ];
       };
     };
+
+    devShells."${system}".default = let
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+      in pkgs.mkShell {
+        packages = with pkgs; [
+        ];
+      };
   };
 }

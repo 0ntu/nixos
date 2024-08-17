@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   services.xserver = {
     enable = true;
-    desktopManager.budgie.enable = true;
-    displayManager.lightdm.enable = true;
+    desktopManager.cinnamon.enable = true;
   };
 
   # Configure keymap in X11
@@ -14,5 +13,6 @@
   environment.systemPackages = with pkgs; [
     xclip
     catppuccin-gtk
+    papirus-icon-theme
   ];
 }

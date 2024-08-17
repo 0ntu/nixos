@@ -28,6 +28,10 @@
       git_status = {
         disabled = true;
       };
+      shlvl = {
+        symbol = ''  '';
+        disabled = false;
+      };
 
       format = ''
         [┌──](line_color)[\(](line_color)$username[](bold blue)$hostname[\)](line_color)$directory$git_branch

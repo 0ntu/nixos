@@ -5,7 +5,7 @@
     discord
     wezterm
     headsetcontrol
+    easyeffects
     tor-browser
-    rustup
   ];
 }

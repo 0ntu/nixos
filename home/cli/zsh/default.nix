@@ -8,6 +8,11 @@
     initExtra = ''
       bindkey -e
       bindkey '^[[Z' autosuggest-accept
+      eval "$(direnv hook zsh)"
     '';
   };
+
+  imports = [
+    ./direnv.nix
+  ];
 }
