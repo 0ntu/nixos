@@ -7,5 +7,6 @@
     headsetcontrol
     easyeffects
     tor-browser
+    libreoffice
   ];
 }
