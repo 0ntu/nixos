@@ -1,11 +1,11 @@
 {pkgs-stable, ...}: {
   programs.wezterm = {
     enable = true;
-    package = pkgs-stable.wezterm;
     enableZshIntegration = true;
     extraConfig = ''
       return {
           window_padding = { left = 0, right = 0, top = 0, bottom = 0 },
+          front_end = "WebGpu",
           enable_wayland = false,
           color_scheme = "Catppuccin Mocha",
           audible_bell = "Disabled",
