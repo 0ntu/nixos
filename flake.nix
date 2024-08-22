@@ -34,8 +34,20 @@
           ./hosts/desktop
         ];
       };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs; machine = "laptop";};
+        modules = [
+          core
+          hmModule
+          graphical
+          virt
+          home-manager
+          ./hosts/laptop
+        ];
+      };
     };
 
+    /*
     devShells."${system}".default = let
       pkgs = import nixpkgs {
         inherit system;
@@ -44,5 +56,6 @@
         packages = with pkgs; [
         ];
       };
+    */
   };
 }
