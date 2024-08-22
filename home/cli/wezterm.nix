@@ -1,6 +1,7 @@
-{...}: {
+{pkgs-stable, ...}: {
   programs.wezterm = {
     enable = true;
+    package = pkgs-stable.wezterm;
     enableZshIntegration = true;
     extraConfig = ''
       return {
