@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,6 +12,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -20,10 +22,11 @@
     virt = ./system/virt.nix;
     hmModule = inputs.home-manager.nixosModules.default;
     home-manager = ./home/manager.nix;
+    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; machine = "desktop";};
+        specialArgs = {inherit inputs; inherit pkgs-stable; machine = "desktop";};
         modules = [
           core
           hmModule
@@ -35,7 +38,7 @@
         ];
       };
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; machine = "laptop";};
+        specialArgs = {inherit inputs; inherit pkgs-stable; machine = "laptop";};
         modules = [
           core
           hmModule
