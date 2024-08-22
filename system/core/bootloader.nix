@@ -17,7 +17,7 @@ in {
       gfxmodeEfi = "1920x1080";
 
       useOSProber = if builtins.pathExists predefined-entries then false else true;
-      extraEntries = lib.optionalAttrs (builtins.pathExists predefined-entries) builtins.readFile predefined-entries;
+      extraEntries = if (builtins.pathExists predefined-entries) then builtins.readFile predefined-entries else "";
     };
   };
 }
