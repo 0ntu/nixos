@@ -7,5 +7,10 @@
     clang
     gnumake
     gnupg
+
+    nodejs
+    python3
+    
+    cargo
   ];
 }

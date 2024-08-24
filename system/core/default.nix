@@ -3,7 +3,7 @@
     ./bootloader.nix
     ./nix.nix
     ./users.nix
-    ./packages.nix
+    ./devpkgs.nix
     ./system.nix
     ./networking.nix
   ];
