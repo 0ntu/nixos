@@ -8,6 +8,5 @@
     nvd
     nh
     bat
-    zellij
   ];
 }

@@ -7,5 +7,6 @@
     ./lsd.nix
     ./nvim.nix
     ./wezterm.nix
+    ./zellij.nix
   ];
 }
