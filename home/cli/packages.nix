@@ -7,6 +7,5 @@
     lazygit
     nvd
     nh
-    bat
   ];
 }
