@@ -2,7 +2,7 @@
   programs.zellij = {
     enable = true;
     settings = {
-      theme = "catppuccin";
+      theme = "catppuccin-mocha";
     };
   };
 }
