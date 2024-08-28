@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     xclip
     catppuccin-gtk
+    libnotify
     papirus-icon-theme
   ];
 }
