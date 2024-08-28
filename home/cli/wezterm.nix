@@ -1,4 +1,5 @@
-{pkgs-stable, ...}: {
+{pkgs-stable, lib, ...}:
+{
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;

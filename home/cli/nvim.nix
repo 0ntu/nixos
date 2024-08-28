@@ -14,10 +14,15 @@
       stylua # Lua
 
       # LSP
+      basedpyright
+      rust-analyzer
       lua-language-server
-      clang-tools
+      clang-tools #clangd
       nixd
       nil
+      zls
+      asm-lsp
+      bash-language-server
 
       # Tools
       cmake

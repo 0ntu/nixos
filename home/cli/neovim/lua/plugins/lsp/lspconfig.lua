@@ -7,6 +7,9 @@ local server_handlers = function()
     lspconfig.nil_ls.setup({})
     lspconfig.clangd.setup({})
     lspconfig.basedpyright.setup({})
+    lspconfig.zls.setup({})
+    lspconfig.asm_lsp.setup({})
+    lspconfig.bashls.setup({})
 end
 
 return {

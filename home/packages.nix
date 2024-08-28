@@ -8,5 +8,6 @@
     easyeffects
     tor-browser
     libreoffice
+    obsidian
   ];
 }
