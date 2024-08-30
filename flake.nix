@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-2205.url = "github:nixos/nixpkgs/nixos-22.05";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     home-manager = {
@@ -13,6 +14,8 @@
     self,
     nixpkgs,
     nixpkgs-stable,
+    nixpkgs-2205,
+    home-manager,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -20,13 +23,25 @@
     graphical = ./system/graphical;
     nvidia = ./system/nvidia.nix;
     virt = ./system/virt.nix;
-    hmModule = inputs.home-manager.nixosModules.default;
+    hmModule = home-manager.nixosModules.default;
     home-manager = ./home/manager.nix;
-    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+    pkgs-stable = import nixpkgs-stable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgs-2205 = import nixpkgs-2205 {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; inherit pkgs-stable; machine = "desktop";};
+        specialArgs = {
+          inherit inputs;
+          inherit pkgs-stable;
+          inherit pkgs-2205;
+          machine = "desktop";
+        };
         modules = [
           core
           hmModule
@@ -38,7 +53,12 @@
         ];
       };
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; inherit pkgs-stable; machine = "laptop";};
+        specialArgs = {
+          inherit inputs;
+          inherit pkgs-stable;
+          inherit pkgs-2205;
+          machine = "laptop";
+        };
         modules = [
           core
           hmModule

@@ -1,15 +1,47 @@
 local server_handlers = function()
+    local caps = vim.tbl_deep_extend(
+        'force',
+        vim.lsp.protocol.make_client_capabilities(),
+        require('cmp_nvim_lsp').default_capabilities(),
+        -- File watching is disabled by default for neovim.
+        -- See: https://github.com/neovim/neovim/pull/22405
+        -- { workspace = { didChangeWatchedFiles = { dynamicRegistration = true } } }
+        {}
+    );
+
     local lspconfig = require("lspconfig")
     -- Handled by rustacean.nvim
     -- lspconfig.rust_analyzer.setup({})
 
-    lspconfig.lua_ls.setup({})
-    lspconfig.nil_ls.setup({})
-    lspconfig.clangd.setup({})
-    lspconfig.basedpyright.setup({})
-    lspconfig.zls.setup({})
-    lspconfig.asm_lsp.setup({})
-    lspconfig.bashls.setup({})
+    lspconfig.lua_ls.setup({
+        capabilities = caps,
+    })
+    lspconfig.nil_ls.setup({
+        capabilities = caps,
+        settings = {
+            ['nil'] = {
+                testSetting = 42,
+                formatting = {
+                    command = { "alejandra" },
+                },
+            },
+        },
+    })
+    lspconfig.clangd.setup({
+        capabilities = caps,
+    })
+    lspconfig.basedpyright.setup({
+        capabilities = caps,
+    })
+    lspconfig.zls.setup({
+        capabilities = caps,
+    })
+    lspconfig.asm_lsp.setup({
+        capabilities = caps,
+    })
+    lspconfig.bashls.setup({
+        capabilities = caps,
+    })
 end
 
 return {

@@ -1,5 +1,6 @@
-{pkgs, ...}: {
+{pkgs, pkgs-2205, ...}: {
   environment.systemPackages = with pkgs; [
+    pkgs-2205.quartus-prime-lite
     zip
     unzip
 
