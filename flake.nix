@@ -15,7 +15,6 @@
     nixpkgs,
     nixpkgs-stable,
     nixpkgs-2205,
-    home-manager,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -23,7 +22,7 @@
     graphical = ./system/graphical;
     nvidia = ./system/nvidia.nix;
     virt = ./system/virt.nix;
-    hmModule = home-manager.nixosModules.default;
+    hmModule = inputs.home-manager.nixosModules.default;
     home-manager = ./home/manager.nix;
     pkgs-stable = import nixpkgs-stable {
       inherit system;

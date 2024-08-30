@@ -1,4 +1,5 @@
 {
+  machine,
   ...
 }: {
   home.username = "ontu";
@@ -8,6 +9,7 @@
   imports = [
     ./cli
     ./packages.nix
+    ../hosts/${machine}/packages.nix
   ];
   programs.home-manager.enable = true;
 }
