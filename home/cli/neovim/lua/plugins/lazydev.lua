@@ -1,5 +1,5 @@
 return {
-    'folke/neodev.nvim',
+    'folke/lazydev.nvim',
     opts = {},
     priority = 100,
 }
