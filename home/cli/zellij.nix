@@ -12,6 +12,9 @@
         #     _args = [ "normal" ];
         #   };
         # };
+        "bind \"Alt f\"" = {
+          "ToggleFocusFullscreen;" = []; 
+        };
       };
     };
   };
