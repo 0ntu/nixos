@@ -6,5 +6,5 @@ return {
             basic = true,
             extra = false,
         },
-    }
-}
+    },
+} 

@@ -8,7 +8,6 @@
   home.sessionVariables = {};
   imports = [
     ./cli
-    ./cli/neovim/flake.nix
     ./packages.nix
     ../hosts/${machine}/packages.nix
   ];

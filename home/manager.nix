@@ -2,6 +2,7 @@
   inputs,
   machine,
   pkgs-stable,
+  nvim,
   ...
 }: {
   home-manager = {
@@ -9,6 +10,7 @@
       inherit inputs;
       inherit machine;
       inherit pkgs-stable;
+      inherit nvim;
     };
     users.ontu = {
       imports = [./home.nix];
