@@ -9,6 +9,6 @@
     tor-browser
     libreoffice
     obsidian
-    nvim.packages.default
+    inputs.neovim.packages."x86_64-linux".default
   ];
 }
