@@ -1,4 +1,5 @@
 {
+	inputs,
   pkgs,
   ...
 }: {
@@ -7,5 +8,6 @@
     lazygit
     nvd
     nh
+    inputs.neovim.packages."x86_64-linux".default
   ];
 }

@@ -12,7 +12,6 @@ local server_handlers = function()
     local lspconfig = require("lspconfig")
     -- Handled by rustacean.nvim
     -- lspconfig.rust_analyzer.setup({})
-    
     lspconfig.matlab_ls.setup({
         capabilities = caps,
     })
@@ -34,9 +33,10 @@ local server_handlers = function()
     lspconfig.clangd.setup({
         capabilities = caps,
     })
-    lspconfig.basedpyright.setup({
+    lspconfig.pylsp.setup({
         capabilities = caps,
     })
+
 
     -- don't show parse errors in a separate window
     vim.g.zig_fmt_parse_errors = 0

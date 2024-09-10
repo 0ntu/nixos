@@ -7,6 +7,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim = {
+      url = "path:./home/cli/neovim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -61,15 +66,15 @@
       };
     };
 
-    /*
-    devShells."${system}".default = let
-      pkgs = import nixpkgs {
-        inherit system;
-      };
-      in pkgs.mkShell {
-        packages = with pkgs; [
-        ];
-      };
-    */
+    packages.${system}.neovim = inputs.neovim.packages.${system}.default;
+
+    # devShells."${system}".default = let
+    #   pkgs = import nixpkgs {
+    #     inherit system;
+    #   };
+    #   in pkgs.mkShell {
+    #     packages = with pkgs; [
+    #     ];
+    #   };
   };
 }
