@@ -1,4 +1,4 @@
-{pkgs, pkgs-2205, ...}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     firefox
