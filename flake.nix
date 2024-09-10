@@ -9,7 +9,7 @@
     };
 
     neovim = {
-      url = "path:./home/cli/neovim";
+      url = "./home/cli/neovim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
