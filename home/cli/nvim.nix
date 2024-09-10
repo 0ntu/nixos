@@ -23,6 +23,7 @@
       zls
       asm-lsp
       bash-language-server
+      matlab-language-server
 
       # Tools
       cmake

@@ -12,6 +12,10 @@ local server_handlers = function()
     local lspconfig = require("lspconfig")
     -- Handled by rustacean.nvim
     -- lspconfig.rust_analyzer.setup({})
+    
+    lspconfig.matlab_ls.setup({
+        capabilities = caps,
+    })
 
     lspconfig.lua_ls.setup({
         capabilities = caps,
