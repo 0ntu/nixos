@@ -22,6 +22,6 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-    opengl.extraPackages = with pkgs; [nvidia-vaapi-driver];
+    graphics.extraPackages = with pkgs; [nvidia-vaapi-driver];
   };
 }
