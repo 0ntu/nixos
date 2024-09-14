@@ -29,12 +29,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-EmqZ9WmAkDBSBQrjXtYK0RKjHqUui4t2t1hlolI5Hwc=",
-        "path": "/nix/store/xllw564jgpjjmmzb8jsa8469rqkzfx20-source/home/cli/neovim",
+        "narHash": "sha256-SmOSsncCvAJXYT5jei1S8LAjDT+xB66/90SZLIk97Lg=",
+        "path": "/nix/store/ix269fxzjy4kysrkypdhqkm675vx33w9-source/home/cli/neovim",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/xllw564jgpjjmmzb8jsa8469rqkzfx20-source/home/cli/neovim",
+        "path": "/nix/store/ix269fxzjy4kysrkypdhqkm675vx33w9-source/home/cli/neovim",
         "type": "path"
       }
     },

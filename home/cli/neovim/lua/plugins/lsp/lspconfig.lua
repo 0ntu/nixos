@@ -33,8 +33,15 @@ local server_handlers = function()
     lspconfig.clangd.setup({
         capabilities = caps,
     })
-    lspconfig.pylsp.setup({
+    lspconfig.basedpyright.setup({
         capabilities = caps,
+        settings = {
+            basedpyright = {
+                analysis = {
+                    typeCheckingMode = "off",
+                },
+            }
+        }
     })
 
 
