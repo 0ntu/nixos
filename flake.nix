@@ -27,6 +27,10 @@
     virt = ./system/virt.nix;
     hmModule = inputs.home-manager.nixosModules.default;
     home-manager = ./home/manager.nix;
+    pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+    };
     pkgs-stable = import nixpkgs-stable {
       inherit system;
       config.allowUnfree = true;
@@ -36,6 +40,7 @@
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          inherit pkgs;
           inherit pkgs-stable;
           machine = "desktop";
         };
@@ -52,6 +57,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          inherit pkgs;
           inherit pkgs-stable;
           machine = "laptop";
         };
