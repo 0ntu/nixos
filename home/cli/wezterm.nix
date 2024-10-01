@@ -1,5 +1,8 @@
-{pkgs-stable, lib, ...}:
 {
+  pkgs-stable,
+  lib,
+  ...
+}: {
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
@@ -14,7 +17,44 @@
           font = wezterm.font 'Cousine',
           font_size = 10.0,
           default_cursor_style = 'SteadyBlock',
-      }
+          keys = {
+            {
+              key = '\\',
+              mods = 'ALT',
+              action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+            },
+            {
+              key = '-',
+              mods = 'ALT',
+              action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+            },
+            {
+              key = 'h',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Left',
+            },
+            {
+              key = 'l',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Right',
+            },
+            {
+              key = 'k',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Up',
+            },
+            {
+              key = 'j',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Down',
+            },
+            {
+              key = 'q',
+              mods = 'CTRL|SHIFT',
+              action = wezterm.action.CloseCurrentPane { confirm = false },
+            },
+          },
+        }
     '';
   };
 }

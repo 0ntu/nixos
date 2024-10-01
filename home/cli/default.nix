@@ -6,6 +6,5 @@
     ./starship.nix
     ./lsd.nix
     ./wezterm.nix
-    ./zellij.nix
   ];
 }
