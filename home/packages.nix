@@ -9,6 +9,7 @@
     tor-browser
     libreoffice
     obsidian
+    cool-retro-term
     inputs.neovim.packages."x86_64-linux".default
   ];
 }
