@@ -30,11 +30,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-SmOSsncCvAJXYT5jei1S8LAjDT+xB66/90SZLIk97Lg=",
-        "path": "/nix/store/4ngcdmrsbzgwr80myzypbd7hvh055cgz-source/home/cli/neovim",
+        "path": "/nix/store/3mnaixfmjy8r0010iavw8ywd1llc13rw-source/home/cli/neovim",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/4ngcdmrsbzgwr80myzypbd7hvh055cgz-source/home/cli/neovim",
+        "path": "/nix/store/3mnaixfmjy8r0010iavw8ywd1llc13rw-source/home/cli/neovim",
         "type": "path"
       }
     },
