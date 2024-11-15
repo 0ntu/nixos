@@ -54,22 +54,6 @@
           ./hosts/desktop
         ];
       };
-      desktopVirt = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          inherit pkgs;
-          inherit pkgs-stable;
-          machine = "desktopVirt";
-        };
-        modules = [
-          core
-          hmModule
-          graphical
-          virt
-          home-manager
-          ./hosts/desktop
-        ];
-      };
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
