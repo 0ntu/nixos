@@ -9,6 +9,7 @@
     tor-browser
     libreoffice
     obsidian
+    vlc
     inputs.neovim.packages."x86_64-linux".default
   ];
 }
