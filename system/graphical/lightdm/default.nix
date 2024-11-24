@@ -8,5 +8,6 @@ in {
         background=${wallpaper}
       '';
     };
+    displayManager.startx.enable = true;
   };
 }
