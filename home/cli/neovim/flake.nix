@@ -112,6 +112,7 @@
           stylua # Lua
 
           # LSP
+          arduino-language-server
           basedpyright
           pyright
           python312Packages.python-lsp-server
