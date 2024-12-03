@@ -10,7 +10,7 @@ km.set('n', '<C-l>', '<C-w>l', { desc = 'Move cursor to right window' })
 
 -- Split
 km.set('n', '<Leader>-', '<Cmd>split<CR>', { desc = 'Horizontal Split' })
-km.set('n', '<Leader>|', '<Cmd>vert split<CR>', { desc = 'Vertical Split' })
+km.set('n', '<Leader>\\', '<Cmd>vert split<CR>', { desc = 'Vertical Split' })
 
 -- Telescope
 local telescope = require('telescope.builtin')
