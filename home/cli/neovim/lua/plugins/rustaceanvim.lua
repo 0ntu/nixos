@@ -1,7 +1,5 @@
 return {
     "mrcjkb/rustaceanvim",
-    version = '^4',
-
-    server = {
-    }
+    version = '^5',
+    lazy = false;
 }
