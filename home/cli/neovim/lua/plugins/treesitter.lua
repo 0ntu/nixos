@@ -6,7 +6,10 @@ return {
 
         configs.setup({
             sync_install = false,
-            highlight = { enable = true },
+            highlight = {
+                enable = true,
+                disable = { "latex" }
+            },
             indent = { enable = true },
         })
     end

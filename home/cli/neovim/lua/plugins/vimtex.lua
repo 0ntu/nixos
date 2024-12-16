@@ -1,4 +1,7 @@
 return {
     'lervag/vimtex',
-    opts = {},
+    lazy = false,
+    init = function()
+        vim.g.vimtex_mappings_prefix = "<leader>l"
+    end
 }
