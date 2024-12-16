@@ -101,6 +101,7 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath,
     require('plugins/fidget'),
     require('plugins/harpoon'),
     require('plugins/presence'),
+    require('plugins/vimtex')
 }, lazyOptions)
 
 require('core')
