@@ -3,5 +3,6 @@
     headsetcontrol
     syncthing
     pfetch
+    btop
   ];
 }
