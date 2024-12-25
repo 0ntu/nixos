@@ -11,11 +11,12 @@
     gcc
     clang
     gnumake
-    gnupg
 
     nodejs
     python3
     
     cargo
   ];
+
+  programs.gnupg.agent.enable = true;
 }
