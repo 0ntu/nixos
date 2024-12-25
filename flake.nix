@@ -12,6 +12,11 @@
       url = "path:./home/cli/neovim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -28,8 +33,8 @@
     hmModule = inputs.home-manager.nixosModules.default;
     home-manager = ./home/manager.nix;
     pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
+      inherit system;
+      config.allowUnfree = true;
     };
     pkgs-stable = import nixpkgs-stable {
       inherit system;

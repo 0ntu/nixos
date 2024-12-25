@@ -1,4 +1,5 @@
 {
+  inputs,
   machine,
   ...
 }: {
@@ -10,6 +11,7 @@
     ./cli
     ./packages.nix
     ../hosts/${machine}/packages.nix
+    inputs.spicetify-nix.homeManagerModules.default
   ];
   programs.home-manager.enable = true;
 }
