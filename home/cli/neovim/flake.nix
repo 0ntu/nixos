@@ -24,9 +24,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    # };
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
@@ -147,63 +147,65 @@
       };
 
       # This is for plugins that will load at startup without using packadd:
-      startupPlugins = with pkgs.vimPlugins; {
-        general = [
-          comment-nvim
-          vim-sleuth
-          lazy-nvim
-          gitsigns-nvim
-          which-key-nvim
-          telescope-nvim
-          telescope-fzf-native-nvim
-          telescope-ui-select-nvim
-          nvim-web-devicons
-          plenary-nvim
-          nvim-lspconfig
-          lazydev-nvim
-          fidget-nvim
-          conform-nvim
-          nvim-cmp
-          luasnip
-          cmp-nvim-lsp
-          cmp-path
-          tokyonight-nvim
-          todo-comments-nvim
-          mini-nvim
-          nvim-treesitter.withAllGrammars
-          # This is for if you only want some of the grammars
-          # (nvim-treesitter.withPlugins (
-          #   plugins: with plugins; [
-          #     nix
-          #     lua
-          #   ]
-          # ))
-        ];
-        kickstart-debug = [
-          nvim-dap
-          nvim-dap-ui
-          nvim-dap-go
-          nvim-nio
-        ];
-        kickstart-indent_line = [
-          indent-blankline-nvim
-        ];
-        kickstart-lint = [
-          nvim-lint
-        ];
-        kickstart-autopairs = [
-          nvim-autopairs
-        ];
-        kickstart-neo-tree = [
-          neo-tree-nvim
-          nui-nvim
-          # nixCats will filter out duplicate packages
-          # so you can put dependencies with stuff even if they're
-          # also somewhere else
-          nvim-web-devicons
-          plenary-nvim
-        ];
-      };
+      # startupPlugins = with pkgs.vimPlugins; {
+      #   general = [
+      #     comment-nvim
+      #     vim-sleuth
+      #     lazy-nvim
+      #     gitsigns-nvim
+      #     which-key-nvim
+      #     telescope-nvim
+      #     telescope-fzf-native-nvim
+      #     telescope-ui-select-nvim
+      #     nvim-web-devicons
+      #     plenary-nvim
+      #     nui-nvim
+      #     nvim-lspconfig
+      #     lazydev-nvim
+      #     fidget-nvim
+      #     conform-nvim
+      #     nvim-cmp
+      #     luasnip
+      #     cmp-nvim-lsp
+      #     cmp-path
+      #     tokyonight-nvim
+      #     todo-comments-nvim
+      #     mini-nvim
+      #     leetcode-nvim
+      #     nvim-treesitter.withAllGrammars
+      #     # This is for if you only want some of the grammars
+      #     # (nvim-treesitter.withPlugins (
+      #     #   plugins: with plugins; [
+      #     #     nix
+      #     #     lua
+      #     #   ]
+      #     # ))
+      #   ];
+      #   kickstart-debug = [
+      #     nvim-dap
+      #     nvim-dap-ui
+      #     nvim-dap-go
+      #     nvim-nio
+      #   ];
+      #   kickstart-indent_line = [
+      #     indent-blankline-nvim
+      #   ];
+      #   kickstart-lint = [
+      #     nvim-lint
+      #   ];
+      #   kickstart-autopairs = [
+      #     nvim-autopairs
+      #   ];
+      #   kickstart-neo-tree = [
+      #     neo-tree-nvim
+      #     nui-nvim
+      #     # nixCats will filter out duplicate packages
+      #     # so you can put dependencies with stuff even if they're
+      #     # also somewhere else
+      #     nvim-web-devicons
+      #     plenary-nvim
+      #   ];
+      # };
 
       # shared libraries to be added to LD_LIBRARY_PATH
       # variable available to nvim runtime
@@ -266,7 +268,7 @@
           # IMPORTANT:
           # your alias may not conflict with your other packages.
           aliases = [ "vim" ];
-          neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+          # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         };
         # and a set of categories that you want
         # (and other information to pass to lua)
