@@ -78,8 +78,12 @@
           ./hosts/laptop
         ];
       };
-    };
-
-    packages.${system}.neovim = inputs.neovim.packages.${system}.default;
+    }
+;
+    packages.${system}.neovim = import ./home/cli/neovim {
+      inherit nixpkgs;
+      inherit inputs;
+      nixCats = inputs.nixCats;
+   };
   };
 }
