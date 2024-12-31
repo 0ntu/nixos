@@ -78,14 +78,5 @@
     };
 
     packages.${system}.neovim = inputs.neovim.packages.${system}.default;
-
-    # devShells."${system}".default = let
-    #   pkgs = import nixpkgs {
-    #     inherit system;
-    #   };
-    #   in pkgs.mkShell {
-    #     packages = with pkgs; [
-    #     ];
-    #   };
   };
 }
