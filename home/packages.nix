@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  outputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -14,7 +15,6 @@
     libreoffice
     obsidian
     vlc
-    inputs.neovim.packages."x86_64-linux".default
   ];
 
   programs.spicetify = let

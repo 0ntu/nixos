@@ -17,6 +17,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs = {
@@ -44,6 +45,7 @@
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
+          outputs = self;
           inherit inputs;
           inherit pkgs;
           inherit pkgs-stable;
@@ -61,6 +63,7 @@
       };
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
+          outputs = self;
           inherit inputs;
           inherit pkgs;
           inherit pkgs-stable;
