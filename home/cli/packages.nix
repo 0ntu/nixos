@@ -9,6 +9,6 @@
     lazygit
     nvd
     nh
-    outputs.packages.${outputs.${system}}.neovim
+    outputs.packages."x86_64-linux".neovim
   ];
 }
