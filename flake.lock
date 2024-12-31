@@ -36,31 +36,13 @@
         "type": "github"
       }
     },
-    "neovim": {
-      "inputs": {
-        "nixCats": "nixCats",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-qCRAmhq1PiSPRE9A1oAQS0UCdzT6cdE2+FrF2PIUXXs=",
-        "path": "/nix/store/h4fnc73kh7xbfdln3wna3059sb61qvyz-source/home/cli/neovim",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/h4fnc73kh7xbfdln3wna3059sb61qvyz-source/home/cli/neovim",
-        "type": "path"
-      }
-    },
     "nixCats": {
       "locked": {
-        "lastModified": 1734988924,
-        "narHash": "sha256-QAG3usEJxvxv/AN7csMaFkGbLKF1NEuUkt0UDNr2lrM=",
+        "lastModified": 1735395058,
+        "narHash": "sha256-/SqVdchMmzcDJhGoZnTQDtGF+MnVh5cAWa06b6swG7E=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "97b1341e0a6a9e59707bfc0f4185e6a2cb784891",
+        "rev": "3f3f3e9ea4e9b69735e06a757eca19ce06a25f80",
         "type": "github"
       },
       "original": {
@@ -104,7 +86,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "neovim": "neovim",
+        "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "spicetify-nix": "spicetify-nix"
