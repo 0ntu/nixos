@@ -46,11 +46,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-qCRAmhq1PiSPRE9A1oAQS0UCdzT6cdE2+FrF2PIUXXs=",
-        "path": "./home/cli/neovim",
+        "path": "/nix/store/h4fnc73kh7xbfdln3wna3059sb61qvyz-source/home/cli/neovim",
         "type": "path"
       },
       "original": {
-        "path": "./home/cli/neovim",
+        "path": "/nix/store/h4fnc73kh7xbfdln3wna3059sb61qvyz-source/home/cli/neovim",
         "type": "path"
       }
     },
