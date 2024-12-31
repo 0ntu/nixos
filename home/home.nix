@@ -6,7 +6,10 @@
   home.username = "ontu";
   home.homeDirectory = "/home/ontu";
   home.stateVersion = "23.11";
-  home.sessionVariables = {};
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
   imports = [
     ./cli
     ./packages.nix
