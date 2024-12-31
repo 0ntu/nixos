@@ -8,10 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim = {
-      url = "./home/cli/neovim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
