@@ -62,6 +62,8 @@ Ensure you have [Flakes](https://wiki.nixos.org/wiki/Flakes) enabled
 experimental-features = nix-command flakes
 ```
 
+You can always test-drive these packages with `nix run`
+
 #### Neovim
 ```
 $ nix profile install github:0ntu/nixos#neovim
