@@ -9,16 +9,14 @@
                                 Dotfile Repo
 ```
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
-   <p></p>
+<div>
    <a href="https://github.com/0ntu/nixos/">
       <img src="https://img.shields.io/github/repo-size/0ntu/nixos?color=ea999c&labelColor=303446&style=for-the-badge">
    </a>
-      <a = href="https://nixos.org">
+   <a href="https://nixos.org">
       <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
-    </a>
-   <br>
+   </a>
 </div>
-
 
 
 My Personal Nix-ified Dotfile repository
