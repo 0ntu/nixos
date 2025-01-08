@@ -10,7 +10,6 @@
 ```
 <h1>
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
-<div>
    <a href="https://github.com/0ntu/nixos/">
       <img src="https://img.shields.io/github/repo-size/0ntu/nixos?color=ea999c&labelColor=303446&style=for-the-badge">
    </a>
@@ -20,10 +19,7 @@
    <a href="https://nixos.org">
       <img src="https://img.shields.io/github/last-commit/0ntu/nixos?color=ca9ee6&labelColor=303446&style=for-the-badge">
    </a>
-</div>
 </h1>
-
-
 My Personal Nix-ified Dotfile repository
 
 About
