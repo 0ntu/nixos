@@ -8,7 +8,7 @@
                                             
                                 Dotfile Repo
 ```
-<h1 align="center">
+<h1>
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
 <div>
    <a href="https://github.com/0ntu/nixos/">
@@ -16,6 +16,9 @@
    </a>
    <a href="https://nixos.org">
       <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+   </a>
+   <a href="https://nixos.org">
+      <img src="https://img.shields.io/github/last-commit/0ntu/nixos?color=ca9ee6&labelColor=303446&style=for-the-badge">
    </a>
 </div>
 </h1>
