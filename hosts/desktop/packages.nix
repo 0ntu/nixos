@@ -4,5 +4,6 @@
     syncthing
     pfetch
     btop
+    prismlauncher
   ];
 }
