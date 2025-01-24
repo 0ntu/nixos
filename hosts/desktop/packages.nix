@@ -5,5 +5,6 @@
     pfetch
     btop
     prismlauncher
+    android-studio
   ];
 }
