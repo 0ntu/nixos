@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, pkgs-stable, ...}: {
   home.packages = with pkgs; [
     headsetcontrol
     syncthing
@@ -6,5 +6,7 @@
     btop
     prismlauncher
     android-studio
+
+    pkgs-stable.vagrant
   ];
 }
