@@ -6,5 +6,6 @@
     ./devpkgs.nix
     ./system.nix
     ./networking.nix
+    ./ssh.nix
   ];
 }

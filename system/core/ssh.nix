@@ -4,6 +4,7 @@
     settings = {
       PermitRootLogin = lib.mkForce "no";
       PasswordAuthentication = lib.mkForce false;
+      KbdInteractiveAuthentication = lib.mkDefault false;
     };
   };
 }
