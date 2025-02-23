@@ -5,7 +5,7 @@
       isNormalUser = true;
       description = "ontu";
       shell = pkgs.zsh;
-      extraGroups = ["networkmanager" "wheel" "libvirtd"];
+      extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINEeuNKcX3LhltjiwWdHmrD2h78w4vQxrv9k0aZxkb+X framework"
       ];
