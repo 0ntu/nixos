@@ -2,9 +2,7 @@
   machine,
   lib,
   ...
-}: let
-  predefined-entries = ./boot-entries/${machine}.cfg;
-in {
+}: {
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -17,8 +15,6 @@ in {
       gfxmodeEfi = lib.mkDefault "1920x1080";
 
       useOSProber = true;
-      # useOSProber = if builtins.pathExists predefined-entries then false else true;
-      # extraEntries = if (builtins.pathExists predefined-entries) then builtins.readFile predefined-entries else "";
     };
   };
 }
