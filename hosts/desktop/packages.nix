@@ -6,7 +6,6 @@
     btop
     prismlauncher
     android-studio
-
     pkgs-stable.vagrant
   ];
 }
