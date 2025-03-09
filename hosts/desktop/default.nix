@@ -11,6 +11,4 @@
   services.openssh.settings = {
     AllowUsers = [ "ontu" ];
   };
-
-
 }
