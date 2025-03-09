@@ -9,6 +9,7 @@
     };
 
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -38,6 +39,7 @@
       inherit system;
       config.allowUnfree = true;
     };
+    nixos-hardware = inputs.nixos-hardware;
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
@@ -73,6 +75,7 @@
           virt
           home-manager
           ./hosts/laptop
+          nixos-hardware.nixosModules.framework-11th-gen-intel
         ];
       };
     }
