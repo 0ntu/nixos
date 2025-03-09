@@ -3,6 +3,7 @@
     syncthing
     pfetch
     arduino-ide
+    android-studio
     pkgs-stable.vagrant
   ];
 }
