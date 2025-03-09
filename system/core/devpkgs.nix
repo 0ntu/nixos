@@ -4,18 +4,15 @@
     unzip
     file
     binwalk
-
     git
     curl
     wget
     gcc
     clang
     gnumake
-
-    nodejs
     python3
-    
-    cargo
+    socat
+    nmap
   ];
 
   programs.gnupg.agent.enable = true;
