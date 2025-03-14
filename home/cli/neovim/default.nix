@@ -50,6 +50,7 @@
         pylyzer
         rust-analyzer
         lua-language-server
+        typescript-language-server
         clang-tools #clangd
         nixd
         nil

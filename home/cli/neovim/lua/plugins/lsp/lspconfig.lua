@@ -62,6 +62,9 @@ local server_handlers = function()
     lspconfig.bashls.setup({
         capabilities = caps,
     })
+    lspconfig.ts_ls.setup({
+        capabilities = caps,
+    })
 end
 
 return {
