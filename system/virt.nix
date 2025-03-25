@@ -8,4 +8,6 @@
 
   # let virsh connect to system qemu (allows config through virt-manager & virsh)
   environment.variables = {LIBVIRT_DEFAULT_URI = "qemu:///system";};
+
+  virtualisation.spiceUSBRedirection.enable = true;
 }
