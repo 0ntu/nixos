@@ -13,6 +13,7 @@
     python3
     socat
     nmap
+    inetutils
   ];
 
   programs.gnupg.agent.enable = true;
