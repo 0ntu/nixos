@@ -7,5 +7,6 @@
     prismlauncher
     android-studio
     pkgs-stable.vagrant
+    gimp
   ];
 }
