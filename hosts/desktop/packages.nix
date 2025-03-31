@@ -15,5 +15,6 @@
     dynamips
     vpcs
     tigervnc
+    gimp
   ];
 }
