@@ -15,6 +15,7 @@
     libreoffice
     obsidian
     vlc
+    keepassxc
   ];
 
   programs.spicetify = let
