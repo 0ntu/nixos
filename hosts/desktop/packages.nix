@@ -6,7 +6,15 @@
     btop
     prismlauncher
     android-studio
-    pkgs-stable.vagrant
+    vagrant
+
+    terraform
+
+    gns3-gui
+    gns3-server
+    dynamips
+    vpcs
+    tigervnc
     gimp
   ];
 }
