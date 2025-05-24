@@ -1,6 +1,7 @@
 {pkgs, pkgs-stable, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ./gpu-passthrough.nix
   ];
   networking.firewall.enable = false;
   services.openssh.enable = true;
