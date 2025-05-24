@@ -13,6 +13,13 @@
     vpcs
     tigervnc
 
+    openvpn
+
+    #fun
+    aircrack-ng
+    wireshark
+    prismlauncher
+
     gimp
   ];
 }
