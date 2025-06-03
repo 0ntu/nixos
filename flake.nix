@@ -82,12 +82,14 @@
     packages.${system}.neovim = import ./home/cli/neovim {
       inherit nixpkgs;
       inherit inputs;
+      inherit system;
       nixCats = inputs.nixCats;
     };
     
     packages."aarch64-darwin".neovim = import ./home/cli/neovim {
       inherit nixpkgs;
       inherit inputs;
+      system = "aarch64-darwin";
       nixCats = inputs.nixCats;
     };
   };
