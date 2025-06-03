@@ -15,7 +15,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = {
@@ -78,12 +77,18 @@
           nixos-hardware.nixosModules.framework-11th-gen-intel
         ];
       };
-    }
-;
+    };
+
     packages.${system}.neovim = import ./home/cli/neovim {
       inherit nixpkgs;
       inherit inputs;
       nixCats = inputs.nixCats;
-   };
+    };
+    
+    packages."aarch64-darwin".neovim = import ./home/cli/neovim {
+      inherit nixpkgs;
+      inherit inputs;
+      nixCats = inputs.nixCats;
+    };
   };
 }
