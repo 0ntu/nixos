@@ -14,6 +14,7 @@
     tigervnc
 
     openvpn
+    openconnect
 
     #fun
     aircrack-ng
