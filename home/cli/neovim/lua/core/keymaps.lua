@@ -17,6 +17,8 @@ local telescope = require('telescope.builtin')
 km.set('n', '<leader>sk', telescope.keymaps, { desc = '[S]earch [k]eymaps' })
 km.set('n', '<leader>sb', telescope.buffers, { desc = '[S]earch [b]uffers' })
 km.set('n', '<leader>sf', telescope.find_files, { desc = '[S]earch [f]iles' })
+km.set('n', '<leader>ss', telescope.grep_string, { desc = '[S]earch [s]tring' })
+km.set('n', '<leader>sl', telescope.live_grep, { desc = '[S]earch [l]ive string' })
 km.set('n', '<leader>sF', telescope.git_files, { desc = '[S]earch git [F]iles' })
 km.set('n', '<leader>sft', telescope.filetypes, { desc = '[S]earch [f]ile[t]ypes' })
 
