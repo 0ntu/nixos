@@ -69,6 +69,7 @@
         sqlite
         tree-sitter
         luarocks
+        ripgrep
       ];
       kickstart-debug = [
         delve
