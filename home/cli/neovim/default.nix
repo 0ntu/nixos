@@ -2,6 +2,7 @@
   inputs,
   nixpkgs,
   nixCats,
+  system,
 }: let
   inherit (nixCats) utils;
   luaPath = "${./.}";
@@ -119,7 +120,7 @@
 in let
   nixCatsBuilder =
     utils.baseBuilder luaPath {
-      system = "x86_64-linux";
+      inherit system;
       inherit nixpkgs dependencyOverlays extra_pkg_config;
     }
     categoryDefinitions
