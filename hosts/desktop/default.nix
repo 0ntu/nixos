@@ -20,4 +20,9 @@
     group = "wheel";
     permissions = "u+rx,g+x";
   };
+
+  services.syncthing = {
+    enable = true;
+    user = "ontu";
+  };
 }
