@@ -5,7 +5,7 @@
     syntaxHighlighting.enable = true;
     enableCompletion = true;
     shellAliases = import ./aliases.nix {inherit machine;};
-    initExtra = ''
+    initContent = ''
       bindkey -e
       bindkey '^[[Z' autosuggest-accept
       bindkey "^[[1;5C" forward-word
