@@ -1,6 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     home-manager = {
@@ -10,6 +13,16 @@
 
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -30,14 +43,6 @@
     virt = ./system/virt.nix;
     hmModule = inputs.home-manager.nixosModules.default;
     home-manager = ./home/manager.nix;
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgs-stable = import nixpkgs-stable {
-      inherit system;
-      config.allowUnfree = true;
-    };
     nixos-hardware = inputs.nixos-hardware;
   in {
     nixosConfigurations = {
@@ -45,8 +50,8 @@
         specialArgs = {
           outputs = self;
           inherit inputs;
-          inherit pkgs;
-          inherit pkgs-stable;
+          # inherit pkgs;
+          # inherit pkgs-stable;
           machine = "desktop";
         };
         modules = [
@@ -63,8 +68,8 @@
         specialArgs = {
           outputs = self;
           inherit inputs;
-          inherit pkgs;
-          inherit pkgs-stable;
+          # inherit pkgs;
+          # inherit pkgs-stable;
           machine = "laptop";
         };
         modules = [
@@ -85,7 +90,7 @@
       inherit system;
       nixCats = inputs.nixCats;
     };
-    
+
     packages."aarch64-darwin".neovim = import ./home/cli/neovim {
       inherit nixpkgs;
       inherit inputs;

@@ -1,24 +1,10 @@
 {pkgs, inputs, ...}:
 {
-  # programs.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true;
-  #   extraOptions = [
-  #     "--unsupported-gpu"
-  #   ];
-  #   xwayland.enable = true;
-
-  #   # Default: -foot, -pulseaudio
-  #   extraPackages = with pkgs; [
-  #     brightnessctl
-  #     grim
-  #     swayidle
-  #     swaylock
-  #     wmenu
-  #   ];
-  # };
-
-  programs.river.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 
   programs.waybar = {
     enable = true;
@@ -28,13 +14,17 @@
     enable = true;                                                         
     settings = {                                                           
       default_session = {                                                  
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
         user = "greeter";                                                  
       };                                                                   
     };                                                                     
   };
 
   environment.systemPackages = with pkgs; [
+    hyprsome
+    xdg-utils
+    rofi-wayland
+    swww
     wl-clipboard
   ];
 }

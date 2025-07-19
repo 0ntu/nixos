@@ -13,6 +13,7 @@
   imports = [
     ./cli
     ./packages.nix
+    ./hyprland.nix
     ../hosts/${machine}/packages.nix
     inputs.spicetify-nix.homeManagerModules.default
   ];

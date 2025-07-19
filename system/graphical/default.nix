@@ -4,7 +4,7 @@
     ./pipewire.nix
     ./x11.nix
     ./lightdm
-    ./sway.nix
+    ./hyprland.nix
   ];
 
   hardware.graphics = {
