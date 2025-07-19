@@ -8,6 +8,8 @@
     vagrant
 
     terraform
+    wireshark
+    openconnect
 
     gns3-gui
     gns3-server

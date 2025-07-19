@@ -9,6 +9,7 @@
     wget
     gcc
     clang
+    rustup
     gnumake
     python3
     socat
