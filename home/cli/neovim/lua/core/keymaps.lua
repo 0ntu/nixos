@@ -36,6 +36,20 @@ km.set("n", "<leader>4", function() harpoon:list():select(4) end, { desc = 'Harp
 -- Oil
 km.set("n", "<S-TAB>", function() require("oil").toggle_float() end, { desc = 'Open Oil in a floating window' })
 
+local range_formatting = function()
+    local start_row, _ = unpack(vim.api.nvim_buf_get_mark(0, "<"))
+    local end_row, _ = unpack(vim.api.nvim_buf_get_mark(0, ">"))
+    vim.lsp.buf.format({
+        range = {
+            ["start"] = { start_row, 0 },
+            ["end"] = { end_row, 0 },
+        },
+        async = true,
+    })
+end
+
+vim.keymap.set("v", "<leader>f", range_formatting, { desc = "Range Formatting" })
+
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
