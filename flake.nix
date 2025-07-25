@@ -14,13 +14,13 @@
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -30,68 +30,50 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-stable,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    core = ./system/core;
-    graphical = ./system/graphical;
-    nvidia = ./system/nvidia.nix;
-    virt = ./system/virt.nix;
-    hmModule = inputs.home-manager.nixosModules.default;
-    home-manager = ./home/manager.nix;
-    nixos-hardware = inputs.nixos-hardware;
-  in {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          outputs = self;
-          inherit inputs;
-          machine = "desktop";
+  outputs = { self, flake-utils, nixpkgs, ... }@inputs:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        nixCats = inputs.nixCats;
+      in {
+        packages.neovim = import ./home/cli/neovim {
+          inherit nixpkgs inputs system nixCats;
         };
-        modules = [
-          core
-          hmModule
-          graphical
-          nvidia
-          virt
-          home-manager
-          ./hosts/desktop
-        ];
-      };
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          outputs = self;
-          inherit inputs;
-          machine = "laptop";
+      }
+    ) // {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            outputs = self;
+            inherit inputs;
+            machine = "desktop";
+          };
+          modules = [
+            ./system/core
+            inputs.home-manager.nixosModules.default
+            ./system/graphical
+            ./system/nvidia.nix
+            ./system/virt.nix
+            ./home/manager.nix
+            ./hosts/desktop
+          ];
         };
-        modules = [
-          core
-          hmModule
-          graphical
-          virt
-          home-manager
-          ./hosts/laptop
-          nixos-hardware.nixosModules.framework-11th-gen-intel
-        ];
+
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            outputs = self;
+            inherit inputs;
+            machine = "laptop";
+          };
+          modules = [
+            ./system/core
+            inputs.home-manager.nixosModules.default
+            ./system/graphical
+            ./system/virt.nix
+            ./home/manager.nix
+            ./hosts/laptop
+            inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+          ];
+        };
       };
     };
-
-    packages.${system}.neovim = import ./home/cli/neovim {
-      inherit nixpkgs;
-      inherit inputs;
-      inherit system;
-      nixCats = inputs.nixCats;
-    };
-
-    packages."aarch64-darwin".neovim = import ./home/cli/neovim {
-      inherit nixpkgs;
-      inherit inputs;
-      system = "aarch64-darwin";
-      nixCats = inputs.nixCats;
-    };
-  };
 }
