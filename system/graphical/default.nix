@@ -4,6 +4,7 @@
     ./pipewire.nix
     ./x11.nix
     ./lightdm
+    ./hyprland.nix
   ];
 
   hardware.graphics = {
@@ -15,5 +16,4 @@
         libvdpau-va-gl
     ];
   };
-  hardware.opengl.enable = true;
 }

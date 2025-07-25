@@ -3,7 +3,7 @@
 in {
   services.xserver = {
     displayManager.lightdm = {
-      enable = true;
+      enable = false;
       greeters.slick.extraConfig = ''
         background=${wallpaper}
       '';

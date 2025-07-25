@@ -2,7 +2,7 @@
   programs.direnv.enable = true;
 
   programs.zsh = {
-    initExtra = lib.mkAfter ''
+    initContent = lib.mkAfter ''
           eval "$(direnv hook zsh)"
     '';
   };

@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -14,5 +14,7 @@
       };
     };
   };
-  services.pulseaudio.enable = false;
+  environment.systemPackages = with pkgs; [
+    pulseaudio
+  ];
 }
