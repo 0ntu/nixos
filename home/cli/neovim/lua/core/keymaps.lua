@@ -12,6 +12,17 @@ km.set('n', '<C-l>', '<C-w>l', { desc = 'Move cursor to right window' })
 km.set('n', '<Leader>-', '<Cmd>split<CR>', { desc = 'Horizontal Split' })
 km.set('n', '<Leader>\\', '<Cmd>vert split<CR>', { desc = 'Vertical Split' })
 
+-- Tabs
+km.set('n', '<C-t>', ':tabnew<CR>', { desc = 'New Tab' })
+km.set('n', '<C-p>', ':tabprev<CR>', { desc = 'Prev Tab' })
+km.set('n', '<C-n>', ':tabnext<CR>', { desc = 'Next Tab' })
+km.set('n', '<C-x>', ':tabclose<CR>', { desc = 'Close Tab' })
+
+-- Jump to tab 1-9
+for i = 1, 9 do
+  vim.keymap.set("n", "<C-" .. i .. ">", ":tabn " .. i .. "<CR>", { desc = "Go to tab " .. i })
+end
+
 -- Telescope
 local telescope = require('telescope.builtin')
 km.set('n', '<leader>sk', telescope.keymaps, { desc = '[S]earch [k]eymaps' })
