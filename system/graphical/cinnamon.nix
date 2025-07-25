@@ -4,6 +4,12 @@
     desktopManager.cinnamon.enable = true;
   };
 
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    autoEnable = true;
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

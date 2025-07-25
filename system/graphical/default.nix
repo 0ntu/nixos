@@ -2,7 +2,7 @@
   imports = [
     ./fonts.nix
     ./pipewire.nix
-    ./x11.nix
+    ./cinnamon.nix
     ./lightdm
     ./hyprland.nix
   ];
