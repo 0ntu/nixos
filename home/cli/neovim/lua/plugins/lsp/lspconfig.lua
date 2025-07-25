@@ -13,28 +13,14 @@ local server_handlers = function()
     -- Handled by rustacean.nvim
     -- lspconfig.rust_analyzer.setup({})
 
-
-    lspconfig.arduino_language_server.setup({
-        capabilities = caps,
-    })
-    lspconfig.matlab_ls.setup({
-        capabilities = caps,
-    })
-
     lspconfig.lua_ls.setup({
         capabilities = caps,
     })
-    lspconfig.nil_ls.setup({
+
+    lspconfig.nixd.setup({
         capabilities = caps,
-        settings = {
-            ['nil'] = {
-                testSetting = 42,
-                formatting = {
-                    command = { "alejandra" },
-                },
-            },
-        },
     })
+
     lspconfig.clangd.setup({
         capabilities = caps,
     })
@@ -48,6 +34,10 @@ local server_handlers = function()
             }
         }
     })
+
+    -- lspconfig.clangd.setup({
+    --     capabilities = caps,
+    -- })
 
     -- don't show parse errors in a separate window
     vim.g.zig_fmt_parse_errors = 0

@@ -36,7 +36,6 @@
     lspsAndRuntimeDeps = with pkgs; {
       general = [
         nixfmt-rfc-style # Nix
-        black # Python
         prettierd # Multi-language
         shfmt # Shell
         isort # Python
@@ -45,6 +44,7 @@
         # LSP
         arduino-language-server
         basedpyright
+        ruff
         rust-analyzer
         lua-language-server
         typescript-language-server
