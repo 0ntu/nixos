@@ -20,6 +20,7 @@
     aircrack-ng
     wireshark
     prismlauncher
+    iw
 
     gimp
   ];
