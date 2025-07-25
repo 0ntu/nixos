@@ -6,16 +6,14 @@ return {
     },
     config = function()
         require('telescope').setup({
-            -- defaults = {
-            --     initial_mode = 'normal'
-            -- },
-            -- extensions = {
-            --     undo = {}
-            -- },
-            mappings = {
-            }
-
+            defaults = {
+                mappings = {
+                    i = {
+                        ["C-j"] = "move_selection_next",
+                        ["C-k"] = "move_selection_previous",
+                    },
+                },
+            },
         })
-        -- require('telescope').load_extension('undo')
     end
 }
