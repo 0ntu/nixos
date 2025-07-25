@@ -28,9 +28,14 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, flake-utils, nixpkgs, ... }@inputs:
+  outputs = { self, flake-utils, stylix, nixpkgs, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
         nixCats = inputs.nixCats;
@@ -67,6 +72,7 @@
           modules = [
             ./system/core
             inputs.home-manager.nixosModules.default
+            stylix.nixosModules.stylix
             ./system/graphical
             ./system/virt.nix
             ./home/manager.nix
