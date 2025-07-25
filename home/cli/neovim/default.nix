@@ -45,20 +45,14 @@
         # LSP
         arduino-language-server
         basedpyright
-        pyright
-        python312Packages.python-lsp-server
-        python312Packages.jedi
-        pylyzer
         rust-analyzer
         lua-language-server
         typescript-language-server
-        clang-tools #clangd
+        clang-tools
         nixd
-        nil
         zls
         asm-lsp
         bash-language-server
-        matlab-language-server
 
         # Tools
         cmake
