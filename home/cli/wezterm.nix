@@ -1,6 +1,4 @@
 {
-  pkgs-stable,
-  lib,
   ...
 }: {
   programs.wezterm = {

@@ -102,7 +102,6 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath,
     require('plugins/harpoon'),
     require('plugins/presence'),
     require('plugins/vimtex'),
-    require('plugins/leetcode'),
     require('plugins/remote'),
 }, lazyOptions)
 

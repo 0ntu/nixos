@@ -50,8 +50,6 @@
         specialArgs = {
           outputs = self;
           inherit inputs;
-          # inherit pkgs;
-          # inherit pkgs-stable;
           machine = "desktop";
         };
         modules = [
@@ -68,8 +66,6 @@
         specialArgs = {
           outputs = self;
           inherit inputs;
-          # inherit pkgs;
-          # inherit pkgs-stable;
           machine = "laptop";
         };
         modules = [

@@ -71,12 +71,6 @@
         luarocks
         ripgrep
       ];
-      kickstart-debug = [
-        delve
-      ];
-      kickstart-lint = [
-        markdownlint-cli
-      ];
     };
 
     # shared libraries to be added to LD_LIBRARY_PATH
@@ -87,9 +81,6 @@
       ];
     };
 
-    # environmentVariables:
-    # this section is for environmentVariables that should be available
-    # at RUN TIME for plugins. Will be available to path within neovim terminal
     environmentVariables = {
     };
 

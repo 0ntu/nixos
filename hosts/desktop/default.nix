@@ -1,4 +1,4 @@
-{pkgs, pkgs-stable, ...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./gpu-passthrough.nix
