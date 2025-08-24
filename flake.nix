@@ -35,7 +35,7 @@
       let
         lib = nixpkgs.lib;
         nixCats = inputs.nixCats;
-        pkgs = nixpkgs { inherit system; };
+        pkgs = import nixpkgs { inherit system; };
       in {
         packages.neovim = import ./home/cli/neovim {
           inherit nixpkgs inputs system nixCats;
