@@ -14,17 +14,20 @@
     enable = true;                                                         
     settings = {                                                           
       default_session = {                                                  
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-user-session";
         user = "greeter";                                                  
       };                                                                   
     };                                                                     
   };
 
+  services.hypridle.enable = true;
+
   environment.systemPackages = with pkgs; [
-    hyprsome
+    hyprlock
     xdg-utils
     rofi-wayland
     swww
     wl-clipboard
+    jq
   ];
 }
