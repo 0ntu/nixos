@@ -41,7 +41,7 @@
           inherit nixpkgs inputs system nixCats;
         };
 
-        homeConfigurations = {
+        packages.homeConfigurations = {
           cyber = inputs.home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [ ./hosts/cyber-vm/home.nix ];
