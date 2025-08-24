@@ -17,4 +17,10 @@
 
     stateVersion = "23.11";
   };
+
+  imports = [
+    ../home/cli
+  ];
+
+  programs.home-manager.enable = true;
 }
