@@ -19,7 +19,7 @@
   };
 
   imports = [
-    ../home/cli
+    ../../home/cli
   ];
 
   programs.home-manager.enable = true;
