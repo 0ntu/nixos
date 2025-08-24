@@ -33,15 +33,17 @@
   outputs = { self, flake-utils, nixpkgs, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
+        lib = nixpkgs.lib;
         nixCats = inputs.nixCats;
+        pkgs = nixpkgs { inherit system; };
       in {
         packages.neovim = import ./home/cli/neovim {
           inherit nixpkgs inputs system nixCats;
         };
 
         homeConfigurations = {
-          ontu = inputs.home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs { inherit system; };
+          cyber = inputs.home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
             modules = [ ./hosts/cyber-vm/home.nix ];
           };
         };
