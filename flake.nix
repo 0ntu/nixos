@@ -28,23 +28,31 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixgl.url = "github:nix-community/nixGL";
   };
 
-  outputs = { self, flake-utils, nixpkgs, ... }@inputs:
+  outputs = { self, flake-utils, nixpkgs, nixgl, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
         lib = nixpkgs.lib;
         nixCats = inputs.nixCats;
-        pkgs = import nixpkgs { inherit system; };
       in {
         packages.neovim = import ./home/cli/neovim {
           inherit nixpkgs inputs system nixCats;
         };
 
         packages.homeConfigurations = {
-          cyber = inputs.home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [ ./hosts/cyber-vm/home.nix ];
+          ctf = inputs.home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs {
+              inherit system;
+              overlays = [ nixgl.overlay ];
+            };
+            modules = [ ./hosts/ctf/home.nix ];
+            extraSpecialArgs = {
+              outputs = self;
+              machine = "ctf";
+            };
           };
         };
       }

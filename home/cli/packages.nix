@@ -11,5 +11,6 @@
     nh
     outputs.packages."x86_64-linux".neovim
     rclone
+    magic-wormhole
   ];
 }
