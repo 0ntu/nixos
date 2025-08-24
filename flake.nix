@@ -43,6 +43,13 @@
         packages.neovim = import ./home/cli/neovim {
           inherit nixpkgs inputs system nixCats;
         };
+
+        homeConfigurations = {
+          ontu = inputs.home-manager.lib.homeManagerConfigurations {
+            pkgs = nixpkgs { inherit system; };
+            modules = [ ./hosts/cyber-vm/home.nix ];
+          };
+        };
       }
     ) // {
       nixosConfigurations = {
