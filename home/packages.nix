@@ -33,4 +33,6 @@
     theme = spicePkgs.themes.catppuccin;
     colorScheme = "mocha";
   };
+
+  services.kdeconnect.enable = true;
 }
