@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, machine, ...}: {
   # host
   virtualisation.libvirtd = {
     enable = true;
@@ -6,7 +6,7 @@
   };
   programs.virt-manager.enable = true;
 
-  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.enable = if machine == "desktop" then true else false;
 
   # let virsh connect to system qemu (allows config through virt-manager & virsh)
   environment.variables = {LIBVIRT_DEFAULT_URI = "qemu:///system";};
