@@ -28,12 +28,12 @@
               action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
             },
             {
-              key = 's',
+              key = 'v',
               mods = 'ALT',
               action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
             },
             {
-              key = 'v',
+              key = 's',
               mods = 'ALT',
               action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
             },
