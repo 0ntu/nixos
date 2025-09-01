@@ -28,6 +28,16 @@
               action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
             },
             {
+              key = 's',
+              mods = 'ALT',
+              action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+            },
+            {
+              key = 'v',
+              mods = 'ALT',
+              action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+            },
+            {
               key = 'h',
               mods = 'ALT',
               action = wezterm.action.ActivatePaneDirection 'Left',

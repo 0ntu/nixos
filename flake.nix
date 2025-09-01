@@ -70,7 +70,7 @@
             ./system/graphical
             ./system/nvidia.nix
             ./system/virt.nix
-            ./home/manager.nix
+            ./home/home.nix
             ./hosts/desktop
           ];
         };
@@ -86,7 +86,7 @@
             inputs.home-manager.nixosModules.default
             ./system/graphical
             ./system/virt.nix
-            ./home/manager.nix
+            ./home/home.nix
             ./hosts/laptop
             inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
           ];

@@ -12,4 +12,5 @@
   environment.variables = {LIBVIRT_DEFAULT_URI = "qemu:///system";};
 
   virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.docker.enable = true;
 }
