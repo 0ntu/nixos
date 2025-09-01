@@ -46,12 +46,12 @@
           ctf = inputs.home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {
               inherit system;
-              overlays = [ nixgl.overlay ];
             };
             modules = [ ./hosts/ctf/home.nix ];
             extraSpecialArgs = {
               outputs = self;
               machine = "ctf";
+              inherit nixgl;
             };
           };
         };
