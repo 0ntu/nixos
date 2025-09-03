@@ -6,10 +6,6 @@
     arduino-ide
     android-studio
 
-    gns3-gui
-    gns3-server
-    dynamips
-    vpcs
     tigervnc
 
     openvpn
