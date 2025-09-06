@@ -30,16 +30,33 @@
     };
 
     nixgl.url = "github:nix-community/nixGL";
+
+    impurity.url = "github:outfoxxed/impurity.nix";
   };
 
-  outputs = { self, flake-utils, nixpkgs, nixgl, ... }@inputs:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      flake-utils,
+      nixpkgs,
+      nixgl,
+      impurity,
+      ...
+    }@inputs:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         lib = nixpkgs.lib;
         nixCats = inputs.nixCats;
-      in {
+      in
+      {
         packages.neovim = import ./home/cli/neovim {
-          inherit nixpkgs inputs system nixCats;
+          inherit
+            nixpkgs
+            inputs
+            system
+            nixCats
+            ;
         };
 
         packages.homeConfigurations = {
@@ -56,7 +73,8 @@
           };
         };
       }
-    ) // {
+    )
+    // {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -82,6 +100,11 @@
             machine = "laptop";
           };
           modules = [
+            {
+              imports = [ impurity.nixosModules.impurity ];
+              impurity.configRoot = self;
+              impurity.enable = true;
+            }
             ./system/core
             inputs.home-manager.nixosModules.default
             ./system/graphical
