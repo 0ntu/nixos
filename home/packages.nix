@@ -17,8 +17,6 @@
     vlc
     keepassxc
     aichat
-
-    devpod-desktop
   ];
 
   programs.spicetify = let
