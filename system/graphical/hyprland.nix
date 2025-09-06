@@ -1,13 +1,13 @@
 {pkgs, inputs, ...}:
 {
   programs.hyprland = {
-    enable = true;
+    enable = false;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.waybar = {
-    enable = true;
+    enable = false;
   };
 
   services.greetd = {                                                      
@@ -20,7 +20,7 @@
     };                                                                     
   };
 
-  services.hypridle.enable = true;
+  services.hypridle.enable = false;
 
   environment.systemPackages = with pkgs; [
     hyprlock
