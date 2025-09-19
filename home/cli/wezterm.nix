@@ -59,6 +59,11 @@
             },
             {
               key = 'q',
+              mods = 'ALT',
+              action = wezterm.action.CloseCurrentPane { confirm = false },
+            },
+            {
+              key = 'q',
               mods = 'CTRL|SHIFT',
               action = wezterm.action.CloseCurrentPane { confirm = false },
             },
