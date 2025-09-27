@@ -16,7 +16,6 @@
     obsidian
     vlc
     keepassxc
-    aichat
   ];
 
   programs.spicetify = let

@@ -2,9 +2,7 @@
   imports = [
     ./fonts.nix
     ./pipewire.nix
-    ./cinnamon.nix
-    ./lightdm
-    ./hyprland.nix
+    ./gnome.nix
   ];
 
   hardware.graphics = {
