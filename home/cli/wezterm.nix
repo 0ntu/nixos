@@ -66,6 +66,14 @@
               mods = 'CTRL|SHIFT',
               action = wezterm.action.CloseCurrentPane { confirm = false },
             },
+            {
+              key = 'x',
+              mods = 'CTRL',
+              action = wezterm.action.Multiple {
+                wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+                wezterm.action.SendKey { key = 'L', mods = 'CTRL' },
+              },
+            },
           },
         }
     '';
