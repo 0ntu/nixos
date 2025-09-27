@@ -18,10 +18,13 @@
   services.gnome.games.enable = false;
   environment.gnome.excludePackages = with pkgs; [ gnome-tour gnome-user-docs ];
 
+  environment.variables = {
+    GSK_RENDERER = "ngl";
+  };
+
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.arc-menu
     gnomeExtensions.tiling-shell
-    gnomeExtensions.pop-shell
+    gnomeExtensions.launch-new-instance
     gnome-tweaks
     xclip
     catppuccin-gtk
