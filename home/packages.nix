@@ -16,6 +16,9 @@
     obsidian
     vlc
     keepassxc
+    zoom-us
+    signal-desktop
+    comma
   ];
 
   programs.spicetify = let
