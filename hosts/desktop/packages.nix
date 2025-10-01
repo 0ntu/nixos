@@ -17,5 +17,7 @@
     vpcs
     tigervnc
     gimp
+
+    gnomeExtensions.gsconnect
   ];
 }
