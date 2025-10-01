@@ -20,6 +20,8 @@
 
   environment.variables = {
     GSK_RENDERER = "ngl";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    GTK_THEME = "Adwaita-dark";
   };
 
   environment.systemPackages = with pkgs; [
@@ -30,6 +32,10 @@
     gnome-tweaks
     xclip
     catppuccin-gtk
+    catppuccin-cursors
+    catppuccin-qt5ct
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum
     libnotify
     papirus-icon-theme
   ];
