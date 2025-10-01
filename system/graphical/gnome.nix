@@ -25,6 +25,8 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.tiling-shell
     gnomeExtensions.launch-new-instance
+    gnomeExtensions.paperwm
+    gnomeExtensions.appindicator
     gnome-tweaks
     xclip
     catppuccin-gtk

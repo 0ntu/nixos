@@ -19,6 +19,8 @@
     zoom-us
     signal-desktop
     comma
+    
+    lan-mouse
   ];
 
   programs.spicetify = let

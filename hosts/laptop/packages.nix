@@ -18,5 +18,6 @@
     iw
 
     gimp
+    google-chrome
   ];
 }
