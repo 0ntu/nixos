@@ -25,6 +25,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gnome-themes-extra
     gnomeExtensions.tiling-shell
     gnomeExtensions.launch-new-instance
     gnomeExtensions.paperwm

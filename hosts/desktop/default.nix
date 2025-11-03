@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ./gpu-passthrough.nix
+    ./passthrough.nix
   ];
   networking.firewall.enable = false;
   services.openssh.enable = true;

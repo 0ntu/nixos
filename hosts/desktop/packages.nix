@@ -18,6 +18,11 @@
     tigervnc
     gimp
 
+    distrobox
+
+    gnome-monitor-config
     gnomeExtensions.gsconnect
+
+    tmux
   ];
 }
