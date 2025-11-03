@@ -44,6 +44,11 @@
       let
         lib = nixpkgs.lib;
         nixCats = inputs.nixCats;
+
+        pkgs-unstable = import inputs.nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
       in
       {
         packages.neovim = import ./home/cli/neovim {
