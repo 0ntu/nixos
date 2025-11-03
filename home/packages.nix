@@ -20,7 +20,7 @@
     signal-desktop
     comma
     
-    lan-mouse
+    input-leap
   ];
 
   programs.spicetify = let
