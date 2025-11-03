@@ -21,6 +21,6 @@
   ];
 
   nixGL.packages = nixgl.packages;
-  # programs.wezterm.package = config.lib.nixGL.wrap pkgs.wezterm;
+  programs.wezterm.package = config.lib.nixGL.wrap pkgs.wezterm;
   programs.home-manager.enable = true;
 }
