@@ -5,6 +5,6 @@
     ./packages.nix
     ./starship.nix
     ./lsd.nix
-    ./wezterm.nix
+    ./ghostty.nix
   ];
 }

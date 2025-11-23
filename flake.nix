@@ -3,11 +3,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixCats.url = "github:BirdeeHub/nixCats-nvim";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     flake-utils = {
@@ -19,8 +18,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim.url = "github:nix-community/nixvim";
     nixgl.url = "github:nix-community/nixGL";
-
     impurity.url = "github:outfoxxed/impurity.nix";
   };
 
@@ -37,7 +36,7 @@
       system:
       let
         lib = nixpkgs.lib;
-        nixCats = inputs.nixCats;
+        nixvim = inputs.nixvim;
 
         pkgs-unstable = import inputs.nixpkgs-unstable {
           inherit system;
@@ -46,12 +45,7 @@
       in
       {
         packages.neovim = import ./home/cli/neovim {
-          inherit
-            nixpkgs
-            inputs
-            system
-            nixCats
-            ;
+          inherit nixvim system;
         };
 
         packages.homeConfigurations = {
