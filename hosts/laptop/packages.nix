@@ -17,6 +17,8 @@
     prismlauncher
     iw
 
+    wireguard-tools
+
     gimp
     google-chrome
   ];
