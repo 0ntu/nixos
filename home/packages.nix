@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     firefox
     discord
-    wezterm
     headsetcontrol
     easyeffects
     tor-browser
@@ -19,6 +18,7 @@
     zoom-us
     signal-desktop
     comma
+    outputs.packages."x86_64-linux".neovim
     
     input-leap
   ];

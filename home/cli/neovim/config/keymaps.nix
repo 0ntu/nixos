@@ -103,7 +103,7 @@
       lspBufAction = "hover";
     }
     {
-      key = "rn";
+      key = "<Leader>rn";
       lspBufAction = "rename";
     }
     {

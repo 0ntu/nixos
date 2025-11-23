@@ -3,4 +3,5 @@
   rbt = "nh os test /etc/nixos -H ${machine}";
   lg = "lazygit";
   cat = "bat";
+  vim = "nvim";
 }
