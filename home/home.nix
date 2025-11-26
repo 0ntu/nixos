@@ -20,7 +20,6 @@
         VISUAL = "nvim";
       };
       imports = [
-        ./cli
         ./packages.nix
         ../hosts/${machine}/packages.nix
         inputs.spicetify-nix.homeManagerModules.default

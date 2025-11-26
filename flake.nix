@@ -47,6 +47,7 @@
           config.allowUnfree = true;
           overlays = [ nixgl.overlay ];
         };
+
       in
       {
         packages.neovim = import ./packages/neovim {
@@ -57,13 +58,22 @@
         packages.ghostty = import ./packages/ghostty {
           inherit pkgs wrappers;
         };
-
-        packages.lsd = import ./packages/lsd {
+        
+        packages.lazygit = import ./packages/lazygit {
           inherit pkgs wrappers;
         };
 
-        packages.starship = import ./packages/starship {
+        packages.lsd = import ./packages/shell/lsd {
           inherit pkgs wrappers;
+        };
+        
+        packages.starship = import ./packages/shell/starship {
+          inherit pkgs wrappers;
+        };
+
+        packages.shell = import ./packages/shell {
+          inherit pkgs wrappers system; 
+          outputs = self;
         };
       }
     )

@@ -1,5 +1,6 @@
-{pkgs, ...}: {
+{outputs, pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    outputs.packages."x86_64-linux".shell
     zip
     unzip
     file
