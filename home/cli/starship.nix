@@ -16,6 +16,7 @@
       directory = {
         format = ''[─](line_color)[\[](line_color)[$path]($style)[$read_only]($read_only_style)[\]](line_color)'';
         truncation_symbol = ".../";
+        truncation_length = 6;
         style = "bold green";
       };
       character = {

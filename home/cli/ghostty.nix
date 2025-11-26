@@ -23,6 +23,7 @@
         "alt+p=previous_tab"
         "alt+x=close_surface"
         "alt+c=new_tab"
+        "alt+b=close_tab"
         "alt+enter=toggle_fullscreen"
       ];
     };

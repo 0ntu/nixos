@@ -96,21 +96,6 @@
         "type": "github"
       }
     },
-    "impurity": {
-      "locked": {
-        "lastModified": 1689836741,
-        "narHash": "sha256-82KeRg2sAqDXCdzVs8P8GoqVaPsZjkWgrfsj6kgOLTY=",
-        "owner": "outfoxxed",
-        "repo": "impurity.nix",
-        "rev": "bbc41b69ab5485cd55aa315d08cff865781d3913",
-        "type": "github"
-      },
-      "original": {
-        "owner": "outfoxxed",
-        "repo": "impurity.nix",
-        "type": "github"
-      }
-    },
     "ixx": {
       "inputs": {
         "flake-utils": [
@@ -269,12 +254,12 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "impurity": "impurity",
         "nixgl": "nixgl",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "wrappers": "wrappers"
       }
     },
     "spicetify-nix": {
@@ -370,6 +355,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "wrappers": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763526891,
+        "narHash": "sha256-7BJv2Sg4XunqYpUgT1ktw2cXCRz7J7UeTY24lFkIBeo=",
+        "owner": "Lassulus",
+        "repo": "wrappers",
+        "rev": "58bc6dbd30d885d23d812b3c519c6768b72aa232",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Lassulus",
+        "repo": "wrappers",
         "type": "github"
       }
     }

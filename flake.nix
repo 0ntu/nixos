@@ -1,6 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    wrappers = {
+      url = "github:Lassulus/wrappers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -20,7 +24,6 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixgl.url = "github:nix-community/nixGL";
-    impurity.url = "github:outfoxxed/impurity.nix";
   };
 
   outputs =
@@ -29,37 +32,25 @@
       flake-utils,
       nixpkgs,
       nixgl,
-      impurity,
+      wrappers,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        lib = nixpkgs.lib;
-        nixvim = inputs.nixvim;
-
-        pkgs-unstable = import inputs.nixpkgs-unstable {
+        pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
         };
       in
       {
-        packages.neovim = import ./home/cli/neovim {
-          inherit nixvim system;
+        packages.neovim = import ./packages/neovim {
+          inherit system;
+          nixvim = inputs.nixvim;
         };
 
-        packages.homeConfigurations = {
-          ctf = inputs.home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs {
-              inherit system;
-            };
-            modules = [ ./hosts/ctf/home.nix ];
-            extraSpecialArgs = {
-              outputs = self;
-              machine = "ctf";
-              inherit nixgl;
-            };
-          };
+        packages.ghostty = import ./packages/ghostty {
+          inherit pkgs wrappers;
         };
       }
     )
@@ -89,11 +80,6 @@
             machine = "laptop";
           };
           modules = [
-            {
-              imports = [ impurity.nixosModules.impurity ];
-              impurity.configRoot = self;
-              impurity.enable = true;
-            }
             ./system/core
             inputs.home-manager.nixosModules.default
             ./system/graphical
