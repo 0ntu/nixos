@@ -1,10 +1,13 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+
     wrappers = {
       url = "github:Lassulus/wrappers";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -23,6 +26,7 @@
     };
 
     nixvim.url = "github:nix-community/nixvim";
+
     nixgl.url = "github:nix-community/nixGL";
   };
 
@@ -41,6 +45,7 @@
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          overlays = [ nixgl.overlay ];
         };
       in
       {
@@ -50,6 +55,14 @@
         };
 
         packages.ghostty = import ./packages/ghostty {
+          inherit pkgs wrappers;
+        };
+
+        packages.lsd = import ./packages/lsd {
+          inherit pkgs wrappers;
+        };
+
+        packages.starship = import ./packages/starship {
           inherit pkgs wrappers;
         };
       }

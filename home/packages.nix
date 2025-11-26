@@ -6,6 +6,12 @@
 }: {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    alejandra
+    lazygit
+    nvd
+    nh
+    rclone
+    magic-wormhole
     firefox
     discord
     headsetcontrol
@@ -19,7 +25,9 @@
     signal-desktop
     comma
     outputs.packages."x86_64-linux".neovim
-    
+    outputs.packages."x86_64-linux".ghostty
+    outputs.packages."x86_64-linux".lsd
+    outputs.packages."x86_64-linux".starship
     input-leap
   ];
 

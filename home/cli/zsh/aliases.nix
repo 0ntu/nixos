@@ -4,4 +4,6 @@
   lg = "lazygit";
   cat = "bat";
   vim = "nvim";
+  ls = "lsd";
+  tree = "lsd --tree";
 }
