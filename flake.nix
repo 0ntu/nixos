@@ -58,6 +58,10 @@
         packages.ghostty = import ./packages/ghostty {
           inherit pkgs wrappers;
         };
+
+        packages.ghosttyGL = pkgs.writeShellScriptBin "ghostty" ''
+          exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.ghostty}/bin/ghostty \"\$@\
+        '';
         
         packages.lazygit = import ./packages/lazygit {
           inherit pkgs wrappers;
