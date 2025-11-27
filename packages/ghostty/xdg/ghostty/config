@@ -17,5 +17,5 @@ keybind = alt+x=close_surface
 keybind = alt+c=new_tab
 keybind = alt+b=close_tab
 keybind = alt+enter=toggle_fullscreen
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-terminfo,ssh-env
 theme = Afterglow

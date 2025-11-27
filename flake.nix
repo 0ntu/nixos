@@ -7,7 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
+    pwndbg = {
+      url = "github:pwndbg/pwndbg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -37,6 +40,7 @@
       nixpkgs,
       nixgl,
       wrappers,
+      pwndbg,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -78,6 +82,10 @@
         packages.shell = import ./packages/shell {
           inherit pkgs wrappers system; 
           outputs = self;
+        };
+        
+        packages.gdb = import ./packages/gdb {
+          inherit pkgs pwndbg wrappers system;
         };
       }
     )
