@@ -23,5 +23,8 @@ alias -- tree='lsd --tree'
 alias -- vim=nvim
 alias -- du=dua
 alias -- df=duf
+alias -- sl=ls
+
+autoload -U compinit; compinit
 
 eval "$(starship init zsh)"
