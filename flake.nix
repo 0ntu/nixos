@@ -2,6 +2,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
     wrappers = {
       url = "github:Lassulus/wrappers";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +56,8 @@
           overlays = [ nixgl.overlay ];
         };
 
+        ghostty = inputs.ghostty.packages.${system}.default;
+
       in
       {
         packages.neovim = import ./packages/neovim {
@@ -60,7 +66,7 @@
         };
 
         packages.ghostty = import ./packages/ghostty {
-          inherit pkgs wrappers;
+          inherit pkgs ghostty wrappers;
         };
 
         packages.ghosttyGL = pkgs.writeShellScriptBin "ghostty" ''

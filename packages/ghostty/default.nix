@@ -1,7 +1,7 @@
-{ pkgs, wrappers }:
+{ pkgs, ghostty, wrappers, ... }:
 wrappers.lib.wrapPackage {
   inherit pkgs;
-  package = pkgs.ghostty;
+  package = ghostty;
   env = {
     XDG_CONFIG_HOME = ./xdg;
   };
