@@ -1,8 +1,11 @@
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+    builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
+fi
+
 HISTSIZE="10000"
 SAVEHIST="10000"
 
 HISTFILE="$HOME/.zsh_history"
-
 bindkey -e
 
 setopt HIST_FCNTL_LOCK
@@ -15,6 +18,11 @@ setopt HIST_IGNORE_SPACE
 unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
+unsetopt MENU_COMPLETE
+setopt AUTO_MENU
+
+zstyle ':completion:*' menu select
+bindkey '^[[Z' reverse-menu-complete
 
 alias -- cat=bat
 alias -- lg=lazygit
@@ -26,10 +34,5 @@ alias -- df=duf
 alias -- sl=ls
 
 autoload -U compinit; compinit
-
-# Ghostty shell integration for Bash. This should be at the top of your bashrc!
-if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
-    builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
-fi
 
 eval "$(starship init zsh)"
