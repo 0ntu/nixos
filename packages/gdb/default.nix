@@ -5,6 +5,6 @@ wrappers.lib.wrapPackage {
   exePath = "${pwndbg.packages.${system}.default}/bin/pwndbg";
   binName = "gdb";
   flags = {
-    "--init-command" = ./gdbinit;
+    "--init-command" = toString ./gdbinit;
   };
 }
