@@ -32,3 +32,4 @@ alias -- sl=ls
 autoload -U compinit; compinit
 
 eval "$(starship init zsh)"
+export TERM=xterm-256color

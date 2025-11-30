@@ -18,5 +18,5 @@ keybind = alt+c=new_tab
 keybind = alt+b=close_tab
 keybind = alt+enter=toggle_fullscreen
 shell-integration = zsh
-shell-integration-features = no-cursor,ssh-terminfo,ssh-env
+shell-integration-features = no-cursor,ssh-env
 theme = Afterglow
