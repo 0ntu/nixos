@@ -19,6 +19,8 @@
     gimp
 
     distrobox
+    wireguard-tools
+    openvpn
 
     gnome-monitor-config
     gnomeExtensions.gsconnect
