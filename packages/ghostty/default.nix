@@ -2,7 +2,8 @@
 wrappers.lib.wrapPackage {
   inherit pkgs;
   package = ghostty;
-  env = {
-    XDG_CONFIG_HOME = ./xdg;
+  flags = {
+    "--config-file" = toString ./config;
   };
+  flagSeparator = "=";
 }

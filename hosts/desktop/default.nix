@@ -3,7 +3,12 @@
     ./hardware-configuration.nix
     ./passthrough.nix
   ];
-  networking.firewall.enable = false;
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 22 ];
+  };
+
   services.openssh.enable = true;
 
   services.openssh.settings = {
