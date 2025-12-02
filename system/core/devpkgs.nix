@@ -1,6 +1,8 @@
 {outputs, pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     outputs.packages."x86_64-linux".shell
+    outputs.packages."x86_64-linux".neovim
+    outputs.packages."x86_64-linux".ghostty
     zip
     unzip
     file

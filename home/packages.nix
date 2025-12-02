@@ -22,9 +22,6 @@
     zoom-us
     signal-desktop
     comma
-    outputs.packages."x86_64-linux".neovim
-    outputs.packages."x86_64-linux".ghostty
-    outputs.packages."x86_64-linux".shell
     input-leap
   ];
 
