@@ -93,16 +93,6 @@
         packages.gdb = import ./packages/gdb {
           inherit pkgs pwndbg wrappers system;
         };
-
-        packages.ctf = pkgs.symlinkJoin {
-          name = "CTF-Tools";
-          paths = with self.packages.${system}; [
-            gdb
-            shell
-            ghosttyGL
-            neovim
-          ];
-        };
       }
     )
     // {
