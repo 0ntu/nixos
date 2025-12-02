@@ -3,6 +3,24 @@
     outputs.packages."x86_64-linux".shell
     outputs.packages."x86_64-linux".neovim
     outputs.packages."x86_64-linux".ghostty
+    nvd
+    nh
+    rclone
+    magic-wormhole
+    firefox
+    discord
+    headsetcontrol
+    easyeffects
+    tor-browser
+    libreoffice
+    obsidian
+    vlc
+    keepassxc
+    zoom-us
+    signal-desktop
+    comma
+    input-leap
+     
     zip
     unzip
     file

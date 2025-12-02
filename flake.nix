@@ -16,11 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     flake-utils = {
@@ -105,11 +100,9 @@
           };
           modules = [
             ./system/core
-            inputs.home-manager.nixosModules.default
             ./system/graphical
             ./system/nvidia.nix
             ./system/virt.nix
-            ./home/home.nix
             ./hosts/desktop
           ];
         };
@@ -122,10 +115,8 @@
           };
           modules = [
             ./system/core
-            inputs.home-manager.nixosModules.default
             ./system/graphical
             ./system/virt.nix
-            ./home/home.nix
             ./hosts/laptop
             inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
           ];
