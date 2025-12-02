@@ -19,7 +19,7 @@
   };
 
   services.syncthing = {
-    enable = false;
+    enable = true;
     openDefaultPorts = true;
     user = "ontu";
   };

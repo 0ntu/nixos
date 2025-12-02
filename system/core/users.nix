@@ -1,4 +1,4 @@
-{outputs, ...}: {
+{outputs, pkgs, ...}: {
   users = {
     users.ontu = {
       isNormalUser = true;

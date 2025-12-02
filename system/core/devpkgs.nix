@@ -3,6 +3,9 @@
     outputs.packages."x86_64-linux".shell
     outputs.packages."x86_64-linux".neovim
     outputs.packages."x86_64-linux".ghostty
+
+    virt-viewer
+
     nvd
     nh
     rclone

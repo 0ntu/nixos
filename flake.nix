@@ -96,7 +96,6 @@
           specialArgs = {
             outputs = self;
             inherit inputs;
-            machine = "desktop";
           };
           modules = [
             ./system/core
@@ -111,7 +110,6 @@
           specialArgs = {
             outputs = self;
             inherit inputs;
-            machine = "laptop";
           };
           modules = [
             ./system/core
