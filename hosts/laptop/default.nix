@@ -4,11 +4,7 @@
     ./bootloader.nix
   ];
   networking.firewall.enable = false;
-  # services.gns3-server = {
-  #   enable = true;
-  #   dynamips.enable = true;
-  #   vpcs.enable =true;
-  # };
+  
   services.openssh.enable = false;
   security.wrappers.ubridge = {
     source = "${pkgs.ubridge}/bin/ubridge";
@@ -22,5 +18,9 @@
     enable = true;
     openDefaultPorts = true;
     user = "ontu";
+  };
+
+  services.tailscale = {
+    enable = true;
   };
 }
