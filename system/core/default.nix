@@ -3,7 +3,7 @@
     ./bootloader.nix
     ./nix.nix
     ./users.nix
-    ./devpkgs.nix
+    ./pkgs.nix
     ./system.nix
     ./networking.nix
     ./ssh.nix

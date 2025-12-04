@@ -12,6 +12,7 @@
     magic-wormhole
     firefox
     discord
+    moonlight-qt
     headsetcontrol
     easyeffects
     tor-browser
