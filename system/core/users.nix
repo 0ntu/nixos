@@ -3,7 +3,7 @@
     users.ontu = {
       isNormalUser = true;
       description = "ontu";
-      shell = outputs.packages."x86_64-linux".shell;
+      shell = pkgs.bashInteractive;
       extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINEeuNKcX3LhltjiwWdHmrD2h78w4vQxrv9k0aZxkb+X framework"

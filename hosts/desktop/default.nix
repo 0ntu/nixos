@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ./passthrough.nix
@@ -16,19 +17,11 @@
     };
   };
 
-  # security.wrappers.ubridge = {
-  #   source = "${pkgs.ubridge}/bin/ubridge";
-  #   capabilities = "cap_net_admin,cap_net_raw=ep";
-  #   owner = "root";
-  #   group = "wheel";
-  #   permissions = "u+rx,g+x";
-  # };
-
   services.syncthing = {
     enable = true;
     user = "ontu";
   };
-  
+
   services.tailscale = {
     enable = true;
   };
@@ -38,9 +31,17 @@
   };
 
   security.wrappers.sunshine = {
-        owner = "root";
-        group = "root";
-        capabilities = "cap_sys_admin+p";
-        source = "${pkgs.sunshine}/bin/sunshine";
- };
+    owner = "root";
+    group = "root";
+    capabilities = "cap_sys_admin+p";
+    source = "${pkgs.sunshine}/bin/sunshine";
+  };
+
+  # Moonlight Laptop Stream
+  # hardware.display.edid.linuxhw."Moonlight_60" = [
+  #   "BOE08BC"
+  #   "2019"
+  # ];
+  # hardware.display.outputs."DP-5".mode = "e";
+  # hardware.display.outputs."DP-5".edid = "Moonlight_60.bin";
 }
