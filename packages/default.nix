@@ -30,6 +30,14 @@ in
     exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.kitty}/bin/kitty "$@"
   '';
 
+  wezterm = import ./wezterm {
+    inherit pkgs wrappers;
+  };
+
+  weztermGL = pkgs.writeShellScriptBin "wezterm" ''
+    exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.wezterm}/bin/wezterm "$@"
+  '';
+
   lazygit = import ./lazygit {
     inherit pkgs wrappers;
   };
