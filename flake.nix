@@ -52,41 +52,15 @@
         };
 
         ghostty = inputs.ghostty.packages.${system}.default;
-
       in
       {
-        packages.neovim = import ./packages/neovim {
-          inherit system;
-          nixvim = inputs.nixvim;
-        };
-
-        packages.ghostty = import ./packages/ghostty {
-          inherit pkgs ghostty wrappers;
-        };
-
-        packages.ghosttyGL = pkgs.writeShellScriptBin "ghostty" ''
-          exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.ghostty}/bin/ghostty "$@"
-        '';
-        
-        packages.lazygit = import ./packages/lazygit {
-          inherit pkgs wrappers;
-        };
-
-        packages.lsd = import ./packages/shell/lsd {
-          inherit pkgs wrappers;
-        };
-        
-        packages.starship = import ./packages/shell/starship {
-          inherit pkgs wrappers;
-        };
-
-        packages.shell = import ./packages/shell {
-          inherit pkgs wrappers system; 
-          outputs = self;
-        };
-        
-        packages.gdb = import ./packages/gdb {
-          inherit pkgs pwndbg wrappers system;
+        packages = import ./packages {
+          inherit
+            pkgs
+            system
+            inputs
+            self
+            ;
         };
       }
     )

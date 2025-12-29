@@ -6,7 +6,7 @@
   ];
 
   networking.firewall = {
-    enable = true;
+    enable = false;
     allowedTCPPorts = [ 22 ];
   };
 
@@ -36,6 +36,10 @@
     capabilities = "cap_sys_admin+p";
     source = "${pkgs.sunshine}/bin/sunshine";
   };
+
+  environment.systemPackages = with pkgs; [
+    prismlauncher
+  ];
 
   # Moonlight Laptop Stream
   # hardware.display.edid.linuxhw."Moonlight_60" = [

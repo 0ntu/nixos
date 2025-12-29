@@ -48,8 +48,6 @@ let
 
     eval "$(starship init zsh)"
     export TERM=xterm-256color
-
-    eval "$(zoxide init zsh)"
   '';
 
   zdotdir = pkgs.runCommand "zdotdir" {} ''
@@ -70,7 +68,6 @@ wrappers.lib.wrapPackage {
     pkgs.duf
     pkgs.dua
     pkgs.nix
-    pkgs.zoxide
     outputs.packages.${system}.lsd
     outputs.packages.${system}.starship
     outputs.packages.${system}.lazygit
