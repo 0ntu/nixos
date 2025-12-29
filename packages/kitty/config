@@ -1,0 +1,60 @@
+# --- Appearance ---
+cursor_shape block
+cursor_blink_interval 0
+font_size 10.0
+
+enabled_layouts splits:split_axis=horizontal
+
+map ctrl+shift+plus change_font_size all +2.0
+map ctrl+shift+minus change_font_size all -2.0
+
+# --- Window Navigation (Vim-style) ---
+map alt+h neighboring_window left
+map alt+l neighboring_window right
+map alt+j neighboring_window down
+map alt+k neighboring_window up
+
+# --- Window Resizing ---
+# Kitty resizes the *active* window. 
+# "3" represents the step size (approx 3 cells/lines).
+map alt+shift+h resize_window narrower 3
+map alt+shift+l resize_window wider 3
+map alt+shift+j resize_window shorter 3
+map alt+shift+k resize_window taller 3
+
+# --- Window Management ---
+map alt+e resize_window reset
+map alt+x close_window
+map alt+enter toggle_fullscreen
+
+map alt+v launch --location=vsplit --cwd=current
+map alt+s launch --location=hsplit --cwd=current
+
+# --- Tab Management ---
+map alt+n next_tab
+map alt+p previous_tab
+map alt+c new_tab_with_cwd
+map alt+b close_tab
+
+# --- Afterglow ---
+background            #202020
+foreground            #d0d0d0
+cursor                #d0d0d0
+selection_background  #303030
+color0                #151515
+color8                #505050
+color1                #ac4142
+color9                #ac4142
+color2                #7e8d50
+color10               #7e8d50
+color3                #e5b566
+color11               #e5b566
+color4                #6c99ba
+color12               #6c99ba
+color5                #9e4e85
+color13               #9e4e85
+color6                #7dd5cf
+color14               #7dd5cf
+color7                #d0d0d0
+color15               #f5f5f5
+selection_foreground #202020

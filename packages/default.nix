@@ -22,6 +22,14 @@ in
     exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.ghostty}/bin/ghostty "$@"
   '';
 
+  kitty = import ./kitty {
+    inherit pkgs wrappers;
+  };
+
+  kittyGL = pkgs.writeShellScriptBin "ghostty" ''
+    exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.kitty}/bin/kitty "$@"
+  '';
+
   lazygit = import ./lazygit {
     inherit pkgs wrappers;
   };
