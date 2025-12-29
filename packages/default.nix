@@ -26,7 +26,7 @@ in
     inherit pkgs wrappers;
   };
 
-  kittyGL = pkgs.writeShellScriptBin "ghostty" ''
+  kittyGL = pkgs.writeShellScriptBin "kitty" ''
     exec ${pkgs.nixgl.auto.nixGLDefault}/bin/nixGL ${self.packages.${system}.kitty}/bin/kitty "$@"
   '';
 
