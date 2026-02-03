@@ -259,6 +259,10 @@
       lspBufAction = "references";
     }
     {
+      key = "<Leader>ca";
+      lspBufAction = "code_action";
+    }
+    {
       key = "<Leader>d";
       action.__raw = '' function() vim.diagnostic.open_float() end '';
       options = {

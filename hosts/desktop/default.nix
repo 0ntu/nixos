@@ -1,8 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ./passthrough.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    xenia-canary
+    jetbrains.idea-oss
+    android-studio
+
+    (prismlauncher.override {
+      jdks = [
+        zulu25
+      ] ;
+    })
   ];
 
   networking.firewall = {
@@ -36,10 +48,6 @@
   #   capabilities = "cap_sys_admin+p";
   #   source = "${pkgs.sunshine}/bin/sunshine";
   # };
-
-  environment.systemPackages = with pkgs; [
-    prismlauncher
-  ];
 
   # Moonlight Laptop Stream
   # hardware.display.edid.linuxhw."Moonlight_60" = [
