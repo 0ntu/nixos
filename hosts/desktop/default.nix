@@ -9,6 +9,7 @@
     xenia-canary
     jetbrains.idea-oss
     android-studio
+    gnome-monitor-config
 
     (prismlauncher.override {
       jdks = [
@@ -38,22 +39,26 @@
     enable = true;
   };
 
-  # services.sunshine = {
-  #   enable = true;
-  # };
-  #
-  # security.wrappers.sunshine = {
-  #   owner = "root";
-  #   group = "root";
-  #   capabilities = "cap_sys_admin+p";
-  #   source = "${pkgs.sunshine}/bin/sunshine";
-  # };
+  services.sunshine = {
+    autoStart = false;
+    capSysAdmin = true;
+    enable = true;
+  };
+
+  services.udev.extraRules = ''
+    KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
+  '';
 
   # Moonlight Laptop Stream
   # hardware.display.edid.linuxhw."Moonlight_60" = [
   #   "BOE08BC"
   #   "2019"
   # ];
-  # hardware.display.outputs."DP-5".mode = "e";
-  # hardware.display.outputs."DP-5".edid = "Moonlight_60.bin";
+  # hardware.display.outputs."DP-4".mode = "e";
+  # hardware.display.outputs."DP-4".edid = "Moonlight_60.bin";
+
+  environment.etc."xdg/monitors.xml" = {
+    source = "/home/ontu/.config/monitors.xml";
+    mode = "0644"; # Set mode so the file is copied and accessible to GDM.
+  };
 }
