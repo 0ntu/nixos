@@ -141,7 +141,7 @@
   };
 
   extraPackages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
     ruff
     shfmt
     ripgrep
