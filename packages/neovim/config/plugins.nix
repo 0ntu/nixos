@@ -9,9 +9,7 @@
     comment.enable = true;
     lz-n.enable = true; # Lazy Loading
     telescope.enable = true;
-    harpoon.enable = true;
-    gitsigns.enable = true;
-    rustaceanvim.enable = true;
+    harpoon.enable = true; gitsigns.enable = true; rustaceanvim.enable = true;
     which-key.enable = true;
 
     nvim-autopairs = {
@@ -137,57 +135,6 @@
             "snippet_backward"
             "fallback"
           ];
-        };
-      };
-    };
-
-    avante = {
-      enable = true;
-      settings = {
-        diff = {
-          autojump = true;
-          debug = false;
-          list_opener = "copen";
-        };
-        highlights = {
-          diff = {
-            current = "DiffText";
-            incoming = "DiffAdd";
-          };
-        };
-        hints = {
-          enabled = true;
-        };
-        mappings = {
-          diff = {
-            both = "cb";
-            next = "]x";
-            none = "c0";
-            ours = "co";
-            prev = "[x";
-            theirs = "ct";
-          };
-        };
-        provider = "navigator";
-        providers = {
-          navigator = {
-            __inherited_from = "openai";
-            endpoint = "https://chat.ai.it.ufl.edu/api";
-            api_key_name = "NAVIGATOR_API_KEY";
-            model = "claude-4.5-sonnet";
-            extra_request_body = {
-              temperature = 1;
-              max_tokens = 8192;
-            };
-          };
-        };
-        windows = {
-          sidebar_header = {
-            align = "center";
-            rounded = true;
-          };
-          width = 30;
-          wrap = true;
         };
       };
     };
