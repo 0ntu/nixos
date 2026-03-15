@@ -2,9 +2,7 @@
 
   programs.nix-ld.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    outputs.packages."x86_64-linux".lazygit
-    outputs.packages."x86_64-linux".lsd
+  environment.systemPackages = with pkgs; [ outputs.packages."x86_64-linux".lazygit outputs.packages."x86_64-linux".lsd
     outputs.packages."x86_64-linux".starship
     outputs.packages."x86_64-linux".neovim
     outputs.packages."x86_64-linux".wezterm
@@ -45,6 +43,7 @@
     bat
     duf
     dua
+    opencode
   ];
 
   programs.gnupg.agent.enable = true;
