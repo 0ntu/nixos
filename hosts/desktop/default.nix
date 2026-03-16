@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./passthrough.nix
+    ./unifiedllm-container.nix
   ];
 
   environment.systemPackages = with pkgs; [
