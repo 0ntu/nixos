@@ -44,6 +44,7 @@
     duf
     dua
     opencode
+    claude-code
   ];
 
   programs.gnupg.agent.enable = true;
