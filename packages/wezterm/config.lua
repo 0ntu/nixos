@@ -69,16 +69,6 @@ config.keys = {
     action = wezterm.action.CloseCurrentPane { confirm = false },
   },
   {
-    key = 'j',
-    mods = 'CTRL',
-    action = wezterm.action.ScrollByPage(1),
-  },
-  {
-    key = 'k',
-    mods = 'CTRL',
-    action = wezterm.action.ScrollByPage(-1),
-  },
-  {
     key = '1',
     mods = 'ALT',
     action = wezterm.action.ActivateTab(0),
