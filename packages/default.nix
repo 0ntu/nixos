@@ -13,6 +13,12 @@ in
     inherit system nixvim;
   };
 
+
+  neovim-desktop-ollama-special = import ./neovim {
+    inherit system nixvim;
+    ollamaUrl = "http://192.168.100.10:11434";
+  };
+  
   ghostty = import ./ghostty {
     inherit pkgs wrappers;
     ghostty = ghostty-pkg;

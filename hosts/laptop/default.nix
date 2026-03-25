@@ -1,8 +1,11 @@
-{pkgs, ...}: {
+{pkgs, outputs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./bootloader.nix
   ];
+
+  environment.systemPackages = [ outputs.packages."x86_64-linux".neovim ];
+
   networking.firewall.enable = false;
   
   services.openssh.enable = false;

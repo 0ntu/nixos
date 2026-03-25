@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [ outputs.packages."x86_64-linux".lazygit outputs.packages."x86_64-linux".lsd
     outputs.packages."x86_64-linux".starship
-    outputs.packages."x86_64-linux".neovim
+    # neovim is configured per-host
     outputs.packages."x86_64-linux".wezterm
     outputs.packages."x86_64-linux".zsh
     virt-viewer

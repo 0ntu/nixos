@@ -6,7 +6,8 @@
     ./unifiedllm-container.nix
   ];
 
-  environment.systemPackages = with pkgs; [
+  # Desktop-specific neovim with ollama configured
+  environment.systemPackages = [ outputs.packages."x86_64-linux".neovim-desktop-ollama-special ] ++ (with pkgs; [
     xenia-canary
     jetbrains.idea-oss
     android-studio
@@ -18,7 +19,7 @@
         zulu25
       ] ;
     })
-  ];
+  ]);
 
   networking.firewall = {
     enable = false;

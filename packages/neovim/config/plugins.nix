@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ollamaUrl ? null, ... }:
 {
   plugins = {
     oil.enable = true;
@@ -128,26 +128,27 @@
               end
             '';
           };
+        } // (if ollamaUrl != null then {
           http = {
-            ollama_mod.__raw = ''
+            ollama.__raw = ''
               function()
                   return require("codecompanion.adapters").extend("ollama", {
                   env = {
-                    url = "http://192.168.100.10:11434",
+                    url = "${ollamaUrl}",
                   }
                 })
               end
             '';
           };
-        };
-        strategies = {
+        } else {});
+        strategies = if ollamaUrl != null then {
           chat = {
-            adapter = "ollama_mod";
+            adapter = "ollama";
           };
           inline = {
-            adapter = "ollama_mod";
+            adapter = "ollama";
           };
-        };
+        } else {};
       };
     };
 
