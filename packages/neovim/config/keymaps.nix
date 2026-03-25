@@ -16,7 +16,8 @@
     {
       mode = "n";
       key = "<Leader>s";
-      action = "<Cmd>split<CR>"; options = {
+      action = "<Cmd>split<CR>";
+      options = {
         desc = "Horizontal Split";
       };
     }
@@ -133,7 +134,7 @@
       mode = "n";
       key = "<leader>sk";
       action = {
-        __raw = '' require("telescope.builtin").keymaps '';
+        __raw = ''require("telescope.builtin").keymaps '';
       };
       options = {
         desc = "[S]earch [k]eymaps";
@@ -143,7 +144,7 @@
       mode = "n";
       key = "<leader>sb";
       action = {
-        __raw = '' require("telescope.builtin").buffers '';
+        __raw = ''require("telescope.builtin").buffers '';
       };
       options = {
         desc = "[S]earch [b]uffers";
@@ -222,7 +223,7 @@
       action.__raw = ''
         function()
           require('conform').format({ async = true, lsp_fallback = true })
-          
+
           -- If in visual mode, exit to normal mode
           local mode = vim.api.nvim_get_mode().mode
           if mode ~= 'n' then
@@ -233,6 +234,38 @@
       '';
       options = {
         desc = "Format buffer";
+      };
+    }
+
+    # CodeCompanion
+    {
+      mode = [
+        "n"
+        "v"
+      ];
+      key = "<leader>lh";
+      action = ":CodeCompanionChat<CR>";
+      options = {
+        desc = "Code Companion ([L]LM) C[h]at";
+      };
+    }
+    {
+      mode = [
+        "n"
+        "v"
+      ];
+      key = "<leader>p";
+      action = ":CodeCompanion<CR>";
+      options = {
+        desc = "Code Companion (LLM) Inline [P]rompt";
+      };
+    }
+    {
+      mode = "v";
+      key = "<leader>la";
+      action = ":CodeCompanionActions<CR>";
+      options = {
+        desc = "Code Companion ([L]LM) [A]ctions";
       };
     }
   ];
@@ -264,7 +297,7 @@
     }
     {
       key = "<Leader>d";
-      action.__raw = '' function() vim.diagnostic.open_float() end '';
+      action.__raw = "function() vim.diagnostic.open_float() end ";
       options = {
         desc = "Open LSP [d]iagnostic in a popup window";
       };
