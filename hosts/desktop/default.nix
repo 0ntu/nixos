@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, outputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -11,6 +11,7 @@
     jetbrains.idea-oss
     android-studio
     gnome-monitor-config
+    google-chrome
 
     (prismlauncher.override {
       jdks = [
@@ -38,6 +39,17 @@
 
   services.tailscale = {
     enable = true;
+  };
+
+  # Fix Tailscale DNS after suspend/resume
+  systemd.services.tailscale-restart-after-sleep = {
+    description = "Restart Tailscale after suspend";
+    after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.systemd}/bin/systemctl restart tailscaled.service";
+    };
   };
 
   services.sunshine = {
