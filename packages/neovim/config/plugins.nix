@@ -3,13 +3,14 @@
   plugins = {
     oil.enable = true;
     web-devicons.enable = true;
-    sleuth.enable = true;
+    guess-indent.enable = true;
     trouble.enable = true;
     fidget.enable = true;
     comment.enable = true;
     lz-n.enable = true; # Lazy Loading
     telescope.enable = true;
-    harpoon.enable = true; gitsigns.enable = true; rustaceanvim.enable = true;
+    harpoon.enable = true;
+    gitsigns.enable = true;
     which-key.enable = true;
 
     nvim-autopairs = {
@@ -24,11 +25,6 @@
       settings = {
         color_devicons = true;
       };
-    };
-
-    alpha = {
-      enable = true;
-      theme = "dashboard";
     };
 
     treesitter = {
@@ -79,6 +75,8 @@
         clangd.enable = true;
         nil_ls.enable = true;
         bashls.enable = true;
+        autotools_ls.enable = true;
+        jsonls.enable = true;
         basedpyright = {
           enable = true;
           settings = {
@@ -112,7 +110,47 @@
       };
     };
 
-    lspkind.enable = true;
+    lspkind.enable = true; # icons for lsp and completion
+    snacks.enable = true;
+
+    codecompanion = {
+      enable = true;
+      settings = {
+        adapters = {
+          acp = {
+            claude_code.__raw = ''
+              function()
+                return require("codecompanion.adapters").extend("claude_code", {
+                  env = {
+                    CLAUDE_CODE_OAUTH_TOKEN = "CLAUDE_CODE_OAUTH_TOKEN",
+                  },
+                })
+              end
+            '';
+          };
+          http = {
+            ollama_mod.__raw = ''
+              function()
+                  return require("codecompanion.adapters").extend("ollama", {
+                  env = {
+                    url = "http://192.168.100.10:11434",
+                  }
+                })
+              end
+            '';
+          };
+        };
+        strategies = {
+          chat = {
+            adapter = "ollama_mod";
+          };
+          inline = {
+            adapter = "ollama_mod";
+          };
+        };
+      };
+    };
+
     blink-cmp = {
       enable = true;
       settings = {
