@@ -14,9 +14,13 @@ in
   };
 
 
-  neovim-desktop-ollama-special = import ./neovim {
+  neovim-desktop-litellm = import ./neovim {
     inherit system nixvim;
-    ollamaUrl = "http://192.168.100.10:11434";
+    litellmConfig = {
+      url = "http://192.168.100.10:4000";
+      apiKey = "sk-1234";
+      model = "autorouter-coding";
+    };
   };
   
   ghostty = import ./ghostty {

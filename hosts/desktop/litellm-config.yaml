@@ -1,0 +1,16 @@
+model_list:
+  - model_name: claude-sonnet-4.6 ### RECEIVED MODEL NAME ###
+    litellm_params: # all params accepted by litellm.completion() - https://docs.litellm.ai/docs/completion/input
+      model: claude-sonnet-4.6 ### MODEL NAME sent to `litellm.completion()` ###
+      api_base: https://chat.ai.it.ufl.edu/api
+      extra_headers: {"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5N2ViOTFhLTQzMDMtNDA3YS1iY2E0LTUwNjA2M2VjZjdkOSIsImp0aSI6IjM4ZmJhYjIzLThlMGQtNDk1NS04MTkyLTMxZDZhMzRjZDViZCJ9.8UDkaMv-m1MWQPixBj9vi9Bz43lRKklKFcc_2ajgn-Y"}
+  
+  # Use this if you want to make requests to `claude-3-haiku-20240307`,`claude-3-opus-20240229`,`claude-2.1` without defining them on the config.yaml
+  # Default models
+  # Works for ALL Providers and needs the default provider credentials in .env
+  - model_name: "*" 
+    litellm_params:
+      model: "*"
+
+general_settings: 
+  master_key: sk-1234

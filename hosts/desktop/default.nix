@@ -6,8 +6,11 @@
     ./unifiedllm-container.nix
   ];
 
-  # Desktop-specific neovim with ollama configured
-  environment.systemPackages = [ outputs.packages."x86_64-linux".neovim-desktop-ollama-special ] ++ (with pkgs; [
+  # Desktop-specific neovim with litellm configured
+  environment.systemPackages = [
+    outputs.packages."x86_64-linux".neovim-desktop-litellm
+  ] ++ (with pkgs; [
+    clockify
     xenia-canary
     jetbrains.idea-oss
     android-studio
@@ -17,6 +20,7 @@
     (prismlauncher.override {
       jdks = [
         zulu25
+        zulu8
       ] ;
     })
   ]);

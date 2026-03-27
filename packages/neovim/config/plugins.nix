@@ -1,4 +1,4 @@
-{ pkgs, ollamaUrl ? null, ... }:
+{ pkgs, litellmConfig ? null, ... }:
 {
   plugins = {
     oil.enable = true;
@@ -128,25 +128,31 @@
               end
             '';
           };
-        } // (if ollamaUrl != null then {
+        } // (if litellmConfig != null then {
           http = {
-            ollama.__raw = ''
+            litellm.__raw = ''
               function()
-                  return require("codecompanion.adapters").extend("ollama", {
+                return require("codecompanion.adapters").extend("openai_compatible", {
                   env = {
-                    url = "${ollamaUrl}",
-                  }
+                    url = "${litellmConfig.url}",
+                    api_key = "${litellmConfig.apiKey}",
+                  },
+                  schema = {
+                    model = {
+                      default = "${litellmConfig.model}",
+                    },
+                  },
                 })
               end
             '';
           };
         } else {});
-        strategies = if ollamaUrl != null then {
+        strategies = if litellmConfig != null then {
           chat = {
-            adapter = "ollama";
+            adapter = "litellm";
           };
           inline = {
-            adapter = "ollama";
+            adapter = "litellm";
           };
         } else {};
       };

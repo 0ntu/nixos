@@ -2,10 +2,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
     wrappers = {
       url = "github:Lassulus/wrappers";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,14 +18,14 @@
       url = "github:numtide/flake-utils";
     };
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixvim.url = "github:nix-community/nixvim";
 
     nixgl.url = "github:nix-community/nixGL";
+
+    nix-binary-ninja = {
+      url = "github:jchv/nix-binary-ninja";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -51,7 +47,6 @@
           overlays = [ nixgl.overlay ];
         };
 
-        ghostty = inputs.ghostty.packages.${system}.default;
       in
       {
         packages = import ./packages {
