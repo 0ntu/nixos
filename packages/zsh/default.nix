@@ -47,7 +47,7 @@ let
     autoload -U compinit; compinit
 
     eval "$(starship init zsh)"
-    eval "$(direnv hook zsh)"
+    eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
     export TERM=xterm-256color
   '';
 
