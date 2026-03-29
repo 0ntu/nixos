@@ -47,6 +47,7 @@ let
     autoload -U compinit; compinit
 
     eval "$(starship init zsh)"
+    eval "$(direnv hook zsh)"
     export TERM=xterm-256color
   '';
 
@@ -68,6 +69,7 @@ wrappers.lib.wrapPackage {
     pkgs.duf
     pkgs.dua
     pkgs.nix
+    pkgs.direnv
     outputs.packages.${system}.lsd
     outputs.packages.${system}.starship
     outputs.packages.${system}.lazygit
