@@ -302,5 +302,12 @@
         desc = "Open LSP [d]iagnostic in a popup window";
       };
     }
+    {
+      key = "<Leader>il";
+      action.__raw = "function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end";
+      options = {
+        desc = "Toggle [i]n[l]ay hints";
+      };
+    }
   ];
 }

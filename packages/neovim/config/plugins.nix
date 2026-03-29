@@ -72,7 +72,16 @@
     lsp = {
       enable = true;
       servers = {
-        clangd.enable = true;
+        clangd = {
+          enable = true;
+          extraOptions.init_options.clangdFileStatus = true;
+          extraOptions.settings.InlayHints = {
+            Designators = true;
+            Enabled = true;
+            ParameterNames = true;
+            DeducedTypes = true;
+          };
+        };
         nil_ls.enable = true;
         bashls.enable = true;
         autotools_ls.enable = true;
