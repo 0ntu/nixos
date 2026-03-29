@@ -190,5 +190,6 @@
     ruff
     shfmt
     ripgrep
+    include-what-you-use
   ];
 }
