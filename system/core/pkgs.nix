@@ -7,6 +7,7 @@
     # neovim is configured per-host
     outputs.packages."x86_64-linux".wezterm
     outputs.packages."x86_64-linux".zsh
+    btop
     virt-viewer
     nvd
     nh
