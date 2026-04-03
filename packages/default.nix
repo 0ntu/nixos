@@ -19,7 +19,7 @@ in
     litellmConfig = {
       url = "http://192.168.100.10:4000";
       apiKey = "sk-1234";
-      model = "autorouter-coding";
+      model = "claude-sonnet-4.6";
     };
   };
   
