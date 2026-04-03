@@ -68,12 +68,12 @@
   '';
 
   # Moonlight Laptop Stream
-  # hardware.display.edid.linuxhw."Moonlight_60" = [
-  #   "BOE08BC"
-  #   "2019"
-  # ];
-  # hardware.display.outputs."DP-4".mode = "e";
-  # hardware.display.outputs."DP-4".edid = "Moonlight_60.bin";
+  hardware.display.edid.linuxhw."Moonlight_60" = [
+    "BOE08BC"
+    "2019"
+  ];
+  hardware.display.outputs."DP-4".mode = "e";
+  hardware.display.outputs."DP-4".edid = "Moonlight_60.bin";
 
   environment.etc."xdg/monitors.xml" = {
     source = "/home/ontu/.config/monitors.xml";
