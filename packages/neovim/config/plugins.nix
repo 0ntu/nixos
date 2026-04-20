@@ -192,6 +192,11 @@
         };
       };
     };
+
+    vimtex = {
+      enable = true;
+    };
+
   };
 
   extraPackages = with pkgs; [
