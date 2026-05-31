@@ -1,13 +1,16 @@
-{outputs, pkgs, ...}: {
+{inputs, outputs, pkgs, ...}: {
 
   programs.nix-ld.enable = true;
 
-  environment.systemPackages = with pkgs; [ outputs.packages."x86_64-linux".lazygit outputs.packages."x86_64-linux".lsd
+  environment.systemPackages = with pkgs; [
+    outputs.packages."x86_64-linux".lazygit
+    outputs.packages."x86_64-linux".lsd
     outputs.packages."x86_64-linux".starship
     # neovim is configured per-host
     outputs.packages."x86_64-linux".wezterm
     outputs.packages."x86_64-linux".zsh
     gimp
+    inputs.claude-desktop.packages."x86_64-linux".claude-desktop
     btop
     virt-viewer
     nvd
@@ -39,6 +42,7 @@
     clang
     gnumake
     python3
+    uv
     socat
     nmap
     inetutils

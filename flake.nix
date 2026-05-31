@@ -1,5 +1,6 @@
 {
   inputs = {
+    meridian.url = "github:rynfar/meridian";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     wrappers = {
@@ -25,6 +26,12 @@
     nix-binary-ninja = {
       url = "github:jchv/nix-binary-ninja";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    claude-desktop = {
+      url = "github:k3d3/claude-desktop-linux-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
   };
 

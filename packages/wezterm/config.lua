@@ -1,6 +1,31 @@
 local wezterm = require 'wezterm'
-local config = wezterm.config_builder()
+ 
+wezterm.on('ask-claude', function(window, pane)
+  window:perform_action(
+    wezterm.action.PromptInputLine {
+      description = 'Ask Claude to run a command:',
+      action = wezterm.action_callback(function(window, pane, line)
+        if not line or line == '' then return end
 
+        local prompt = 'Respond with ONLY a shell command. No explanation, no markdown, no backticks. Just the raw command.\n\nRequest: ' .. line
+
+        local success, stdout, stderr = wezterm.run_child_process({
+          'claude', '-p', prompt
+        })
+
+        if success and stdout and stdout ~= '' then
+          local cmd = stdout:match('^%s*(.-)%s*$') -- trim whitespace
+          pane:send_text(cmd) -- types it into the shell, but doesn't run it
+        else
+          wezterm.log_error('Claude error: ' .. (stderr or 'unknown'))
+        end
+      end),
+    },
+    pane
+  )
+end)
+
+local config = wezterm.config_builder()
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 -- config.front_end = "WebGpu"
 config.enable_wayland = false
@@ -11,6 +36,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font_size = 10.0
 config.default_cursor_style = 'SteadyBlock'
 config.use_fancy_tab_bar = false;
+
 
 config.keys = {
   {
@@ -120,6 +146,7 @@ config.keys = {
   },
   {
     key = 'l',
+
     mods = 'ALT|SHIFT',
     action = wezterm.action.ActivateTabRelative(1),
   },
@@ -132,6 +159,11 @@ config.keys = {
     key = 'k',
     mods = 'ALT|SHIFT',
     action = wezterm.action.MoveTabRelative(1),
+  },
+  {
+  key = 'p',
+  mods = 'ALT',
+  action = wezterm.action.EmitEvent 'ask-claude',
   },
 }
 
