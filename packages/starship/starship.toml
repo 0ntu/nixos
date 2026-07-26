@@ -1,4 +1,4 @@
-format = "[┌──](line_color)[\\(](line_color)$username[](bold blue)$hostname[\\)](line_color)$directory$git_branch\n[└─](line_color)$character\n"
+format = "[┌──](line_color)[\\(](line_color)${custom.userhost_local}${custom.userhost_remote}[\\)](line_color)$directory$git_branch\n[└─](line_color)$character\n"
 palette = "catppuccin_mocha"
 right_format = "$all\n\n"
 [character]
@@ -18,6 +18,7 @@ format = "[─](line_color)[\\[](line_color)[$symbol$branch(:$remote_branch)]($s
 disabled = true
 
 [hostname]
+disabled = true
 format = "[$hostname]($style)[$ssh_symbol](peach)"
 ssh_only = false
 ssh_symbol = " 󰢹"
@@ -57,6 +58,19 @@ disabled = false
 symbol = "  "
 
 [username]
+disabled = true
 format = "[$user]($style)"
 show_always = true
 style_user = "bold blue"
+
+[custom.userhost_local]
+when = 'test -z "$SSH_CONNECTION$SSH_CLIENT$SSH_TTY$CONTAINER_ID$container"'
+command = 'printf "%s%s" "$USER" "$(hostname)"'
+shell = ["bash", "--noprofile", "--norc"]
+format = "[$output](bold blue)"
+
+[custom.userhost_remote]
+when = 'test -n "$SSH_CONNECTION$SSH_CLIENT$SSH_TTY$CONTAINER_ID$container"'
+command = 'icon=""; [ -n "$SSH_CONNECTION$SSH_CLIENT$SSH_TTY" ] && icon=" 󰢹"; printf "%s%s%s" "$USER" "$(hostname)" "$icon"'
+shell = ["bash", "--noprofile", "--norc"]
+format = "[$output](bold red)"

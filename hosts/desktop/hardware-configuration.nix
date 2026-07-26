@@ -24,11 +24,6 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/media/hdd" =
-    { device = "/dev/disk/by-uuid/e23444c3-8337-479e-b081-eadd6670d16a";
-      fsType = "ext4";
-    };
-
   fileSystems."/media/ssd" =
     { device = "/dev/disk/by-uuid/2c70b658-1b54-4cf8-b28c-afe8823abf30";
       fsType = "ext4";

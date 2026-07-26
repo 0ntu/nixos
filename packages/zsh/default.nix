@@ -10,7 +10,6 @@ let
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     # source ${pkgs.zsh-autocomplete}/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
     source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    source ${pkgs.zsh-z}/share/zsh-z/zsh-z.plugin.zsh
 
     export LS_COLORS='di=01;93:';
     HISTSIZE="10000"

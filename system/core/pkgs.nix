@@ -11,6 +11,7 @@
     outputs.packages."x86_64-linux".zsh
     gimp
     inputs.claude-desktop.packages."x86_64-linux".claude-desktop
+    ripgrep
     btop
     virt-viewer
     nvd

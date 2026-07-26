@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ./passthrough.nix
-    ./unifiedllm-container.nix
   ];
 
   # Desktop-specific neovim with litellm configured
@@ -16,6 +15,7 @@
     android-studio
     gnome-monitor-config
     google-chrome
+    distrobox
 
     (prismlauncher.override {
       jdks = [
@@ -68,15 +68,20 @@
   '';
 
   # Moonlight Laptop Stream
-  hardware.display.edid.linuxhw."Moonlight_60" = [
-    "BOE08BC"
-    "2019"
-  ];
-  hardware.display.outputs."DP-4".mode = "e";
-  hardware.display.outputs."DP-4".edid = "Moonlight_60.bin";
+  # hardware.display.edid.linuxhw."Moonlight_60" = [
+  #   "BOE08BC"
+  #   "2019"
+  # ];
+  # hardware.display.outputs."DP-4".mode = "e";
+  # hardware.display.outputs."DP-4".edid = "Moonlight_60.bin";
 
   environment.etc."xdg/monitors.xml" = {
     source = "/home/ontu/.config/monitors.xml";
     mode = "0644"; # Set mode so the file is copied and accessible to GDM.
+  };
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
   };
 }
